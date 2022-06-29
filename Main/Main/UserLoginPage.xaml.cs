@@ -25,10 +25,10 @@ namespace Main
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            //if (CheckRegularExpressions.CheckEmailCorrection(EmailBox.Text))
-            //{
-            //    Close();
-            //}
+            if (CheckRegularExpressions.CheckEmailCorrection(EmailBox.Text))
+            {
+                Close();
+            }
         }
     }
 }

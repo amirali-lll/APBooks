@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CheckRegularExpressions.cs" />
+    <Compile Include="NormalUser.cs" />
     <Compile Include="UserLoginPage.xaml.cs">
       <DependentUpon>UserLoginPage.xaml</DependentUpon>
     </Compile>
