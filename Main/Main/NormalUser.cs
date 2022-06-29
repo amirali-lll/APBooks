@@ -27,12 +27,12 @@ namespace Main
             this.Password = Password;
             AllEmails.Add(Email);
             AllUsers.Add(this);
-            //cart = new Cart(this);
+            // = new Cart(this);
         }
 
         //Collections:
-        //public List<Book> BoughtBooks { get; set; } = new List<Book>();
-        //public List<Book> MarkedBooks { get; set; } = new List<Book>();
+        public List<Book> BoughtBooks { get; set; } = new List<Book>();
+        public List<Book> MarkedBooks { get; set; } = new List<Book>();
 
         //Static Collections:
         public static List<string> AllEmails { get; set; } = new List<string>();
