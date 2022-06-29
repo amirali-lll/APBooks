@@ -24,5 +24,17 @@ namespace Main
         {
             InitializeComponent();
         }
+
+        private void NormalUserButton_Click(object sender, RoutedEventArgs e)
+        {
+            //UserLoginPage userLoginPage = new UserLoginPage();
+            //userLoginPage.Show();
+            //Close();
+        }
+
+        private void ManagerButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
