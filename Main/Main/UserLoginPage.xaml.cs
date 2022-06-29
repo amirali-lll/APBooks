@@ -10,31 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Main
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for UserLoginPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UserLoginPage : Window
     {
-        public MainWindow()
+        public UserLoginPage()
         {
             InitializeComponent();
         }
-
-        private void NormalUserButton_Click(object sender, RoutedEventArgs e)
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            UserLoginPage userLoginPage = new UserLoginPage();
-            userLoginPage.Show();
-            Close();
-        }
-
-        private void ManagerButton_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
+            //if (CheckRegularExpressions.CheckEmailCorrection(EmailBox.Text))
+            //{
+            //    Close();
+            //}
         }
     }
 }
+

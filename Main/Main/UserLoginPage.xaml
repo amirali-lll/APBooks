@@ -1,0 +1,36 @@
+﻿<Window x:Class="Main.UserLoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Main"
+        mc:Ignorable="d"
+        Title="UserLoginPage" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid x:Name="UserLoginPage1">
+        <Grid.Background>
+            <ImageBrush ImageSource = "C:\Users\Asus\Desktop\Source\FirstPageBackgroundImage.png"/>
+        </Grid.Background>
+        <Image Source="C:\Users\Asus\Desktop\Source\APBooks logo.png" Margin= "468,164,371,389"/>
+        <TextBlock TextWrapping="Wrap" Text="Email :" Margin="459,287,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="50" FontSize="16"/>
+        <TextBlock TextWrapping="Wrap" Text="Password :" Margin="435,344,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="74" FontSize="16"/>
+        <TextBox x:Name="EmailBox" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="212" TextAlignment="Left" FontSize="14" MaxLines="1" MinLines="1" MaxLength="32" Foreground="#FFEBEBEB" Margin="516,285,0,0" Background="{x:Null}">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4280B7" Offset="0.824"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <PasswordBox x:Name="PassWordBox" Margin="516,340,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="26" Width="212" Background="{x:Null}" FontSize="14" Foreground="White">
+            <PasswordBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4382BB" Offset="0.723"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </PasswordBox.BorderBrush>
+        </PasswordBox>
+        <Image Source="C:\Users\Asus\Desktop\Source\LoginButton.png" Margin= "497,409,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="48" Width="230" Stretch="Uniform"/>
+        <Button x:Name="LoginButton" Content="" Margin="496,409,0,0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="232" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="LoginButton_Click"/>
+    </Grid>
+</Window>
+
