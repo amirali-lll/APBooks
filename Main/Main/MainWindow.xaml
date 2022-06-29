@@ -8,13 +8,13 @@
         Title="MainWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource = "C:\Users\Asus\Desktop\Source\FirstPageBackgroundImage.png"/>
+            <ImageBrush ImageSource = "https://s6.uupload.ir/files/firstpagebackgroundimage_7d9c.png"/>
         </Grid.Background>
         <Grid>
-            <Image Source="C:\Users\Asus\Desktop\Source\APBooks logo.png" Margin= "454,159,385,370"/>
-            <Image Source="C:\Users\Asus\Desktop\Source\I'm a normal user botton.png" Margin="600,272,311,272"/>
+            <Image Source="https://s6.uupload.ir/files/apbooks_logo_yb1h.png" Margin= "454,159,385,370"/>
+            <Image Source="https://s6.uupload.ir/files/i_39_m_a_normal_user_botton_xc0h.png" Margin="600,272,311,272"/>
             <Button x:Name="NormalUserButton" Margin="600,0,0,0" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Left" Height="47" Width="274" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="NormalUserButton_Click"/>
-            <Image Source="C:\Users\Asus\Desktop\Source\I'm a manager one botton.png" Margin="306,272,605,272"/>
+            <Image Source="https://s6.uupload.ir/files/i_39_m_a_manager_one_botton_z37b.png" Margin="306,272,605,272"/>
             <Button x:Name="ManagerButton" Margin="306,0,0,0" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Left" Height="47" Width="274" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="ManagerButton_Click"/>
         </Grid>
 
