@@ -55,7 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Book.cs" />
+    <Compile Include="Cart.cs" />
     <Compile Include="CheckRegularExpressions.cs" />
+    <Compile Include="Manager.cs" />
     <Compile Include="NormalUser.cs" />
     <Compile Include="UserLoginPage.xaml.cs">
       <DependentUpon>UserLoginPage.xaml</DependentUpon>
