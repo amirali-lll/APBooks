@@ -49,11 +49,17 @@ namespace Main
         }
         public static bool CheckPasswordValidation(string Email, string Password)
         {
-            if(NormalUser.FindUser(Email).Password == Password)
+            if(Password == "")
             {
-                return true;
+                MessageBox.Show("The password box is empty!");
+                return false;
             }
-            return false;
+            else if(NormalUser.FindUser(Email).Password != Password)
+            {
+                MessageBox.Show("The password is not correct!");
+                return false;
+            }
+            return true;
         }
     }
 }

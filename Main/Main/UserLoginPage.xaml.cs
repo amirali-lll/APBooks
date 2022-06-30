@@ -29,7 +29,10 @@ namespace Main
         {
             if (CheckRegularExpressions.CheckEmailValidation(EmailBox.Text, UserType))
             {
-                Close();
+                if(CheckRegularExpressions.CheckPasswordValidation(EmailBox.Text, PassWordBox.Password))
+                {
+                    Close();
+                }
             }
         }
     }
