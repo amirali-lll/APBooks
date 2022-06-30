@@ -16,3 +16,5 @@ C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main.csproj.Generat
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main.exe
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main.pdb
+C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\NormalUserSignUpPage.g.cs
+C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\NormalUserSignUpPage.baml

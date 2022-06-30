@@ -60,6 +60,9 @@
     <Compile Include="CheckRegularExpressions.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="NormalUser.cs" />
+    <Compile Include="NormalUserSignUpPage.xaml.cs">
+      <DependentUpon>NormalUserSignUpPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserLoginPage.xaml.cs">
       <DependentUpon>UserLoginPage.xaml</DependentUpon>
     </Compile>
@@ -75,6 +78,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NormalUserSignUpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserLoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

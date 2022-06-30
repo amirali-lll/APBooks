@@ -36,11 +36,20 @@ namespace Main
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow w = new MainWindow();
             w.Show();
             Close();
+        }
+        private void HereButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (UserType == MOrU.normaluser)
+            {
+                NormalUserSignUpPage normalUserSignUpPage = new NormalUserSignUpPage();
+                normalUserSignUpPage.Show();
+                Close();
+            }
         }
     }
 }
