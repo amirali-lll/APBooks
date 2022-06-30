@@ -22,17 +22,28 @@ namespace Main
             MessageBox.Show("The entered email address is not in the correct format!");
             return false;
         }
-        public static bool CheckEmailValidation(string Email)
+        public static bool CheckEmailValidation(string Email, MOrU usertype)
         {
             if(Email == "")
             {
                 MessageBox.Show("The email box is empty!");
                 return false;
             }
-            else if (!NormalUser.AllEmails.Contains(Email))
+            if (usertype == MOrU.normaluser)
             {
-                MessageBox.Show("The intered email addrress is not valid!");
-                return false;
+                if (!NormalUser.AllEmails.Contains(Email))
+                {
+                    MessageBox.Show("The intered email addrress is not valid!");
+                    return false;
+                }
+            }
+            else
+            {
+                if (!Manager.AllEmails.Contains(Email))
+                {
+                    MessageBox.Show("The intered email addrress is not valid!");
+                    return false;
+                }
             }
             return true;
         }

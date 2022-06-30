@@ -27,7 +27,7 @@ namespace Main
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckRegularExpressions.CheckEmailValidation(EmailBox.Text))
+            if (CheckRegularExpressions.CheckEmailValidation(EmailBox.Text, UserType))
             {
                 Close();
             }
