@@ -18,6 +18,8 @@ namespace Main
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
+    public enum MOrU { manager, normaluser }
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -27,13 +29,15 @@ namespace Main
 
         private void NormalUserButton_Click(object sender, RoutedEventArgs e)
         {
-            UserLoginPage userLoginPage = new UserLoginPage();
+            UserLoginPage userLoginPage = new UserLoginPage(MOrU.normaluser);
             userLoginPage.Show();
             Close();
         }
 
         private void ManagerButton_Click(object sender, RoutedEventArgs e)
         {
+            UserLoginPage managerLoginPage = new UserLoginPage(MOrU.manager);
+            managerLoginPage.Show();
             Close();
         }
     }

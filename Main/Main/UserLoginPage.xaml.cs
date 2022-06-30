@@ -19,8 +19,10 @@ namespace Main
     /// </summary>
     public partial class UserLoginPage : Window
     {
-        public UserLoginPage()
+        MOrU UserType { get; set; }
+        public UserLoginPage(MOrU UserType)
         {
+            this.UserType = UserType;
             InitializeComponent();
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
