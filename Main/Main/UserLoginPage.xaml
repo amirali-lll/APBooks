@@ -33,6 +33,8 @@
         <Button x:Name="LoginButton" Content="" Margin="496,409,0,0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="232" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="LoginButton_Click"/>
         <TextBlock TextWrapping="Wrap" Text="Don't have an account? Click          to sign up" Margin="502,458,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="232" FontSize="11"/>
         <Button Margin="641,455,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="30" Background="Transparent" BorderBrush="Transparent" Content="here" Foreground="#FFF2F2F2" FontStyle="Italic" FontWeight="Normal" Cursor="Hand"/>
+        <Image Source="https://s6.uupload.ir/files/backicon_sxf1.png" Margin= "23,17,1117,584"/>
+        <Button Content="" Margin="23,17,1117,583" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.05" Click="Button_Click"/>
     </Grid>
 </Window>
 

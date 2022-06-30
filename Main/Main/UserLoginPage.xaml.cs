@@ -35,6 +35,13 @@ namespace Main
                 }
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow w = new MainWindow();
+            w.Show();
+            Close();
+        }
     }
 }
 
