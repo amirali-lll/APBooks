@@ -31,6 +31,14 @@ namespace Main
             {
                 if(CheckRegularExpressions.CheckPasswordValidation(EmailBox.Text, PassWordBox.Password))
                 {
+                    if(UserType == MOrU.normaluser)
+                    {
+                        MessageBox.Show("Welcome " + NormalUser.FindUser(EmailBox.Text).FirstName + "!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Welcome " + EmailBox.Text + " !");
+                    }
                     Close();
                 }
             }

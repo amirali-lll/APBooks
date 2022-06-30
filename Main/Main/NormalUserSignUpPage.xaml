@@ -57,9 +57,9 @@
             </PasswordBox.BorderBrush>
         </PasswordBox>
         <Image Source="https://s6.uupload.ir/files/signupbutton_psdy.png" Margin= "496,458,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="48" Width="230" Stretch="Uniform"/>
-        <Button x:Name="LoginButton" Content="" Margin="495,457,0,0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="232" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1"/>
+        <Button x:Name="LoginButton" Content="" Margin="495,457,0,0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="232" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="SignUpButton_Click"/>
         <Image Source="https://s6.uupload.ir/files/backicon_sxf1.png" Margin= "23,17,1117,584"/>
-        <Button Content="" Margin="23,17,1117,583" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.05" Click="Button_Click"/>
+        <Button x:Name="BackButton" Content="" Margin="23,17,1117,583" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.05" Click="BackButton_Click"/>
     </Grid>
 </Window>
 
