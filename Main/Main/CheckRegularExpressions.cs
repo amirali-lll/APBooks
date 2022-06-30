@@ -24,7 +24,25 @@ namespace Main
         }
         public static bool CheckEmailValidation(string Email)
         {
+            if(Email == "")
+            {
+                MessageBox.Show("The email box is empty!");
+                return false;
+            }
+            else if (!NormalUser.AllEmails.Contains(Email))
+            {
+                MessageBox.Show("The intered email addrress is not valid!");
+                return false;
+            }
             return true;
+        }
+        public static bool CheckPasswordValidation(string Email, string Password)
+        {
+            if(NormalUser.FindUser(Email).Password == Password)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

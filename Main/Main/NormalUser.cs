@@ -37,5 +37,18 @@ namespace Main
         //Static Collections:
         public static List<string> AllEmails { get; set; } = new List<string>();
         public static List<NormalUser> AllUsers { get; set; } = new List<NormalUser>();
+
+        //Static Methods:
+        public static NormalUser FindUser(string Email)
+        {
+            foreach(NormalUser user in AllUsers)
+            {
+                if(user.Email == Email)
+                {
+                    return user;
+                }
+            }
+            return null;
+        }
     }
 }
