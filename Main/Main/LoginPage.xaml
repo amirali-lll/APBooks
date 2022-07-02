@@ -1,4 +1,4 @@
-﻿<Window x:Class="Main.UserLoginPage"
+﻿<Window x:Class="Main.LoginPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -29,7 +29,7 @@
                 </LinearGradientBrush>
             </PasswordBox.BorderBrush>
         </PasswordBox>
-        <Image x:Name="LoginImage" Source= "https://s6.uupload.ir/files/loginbutton(normaluser)_6ccy.png" Margin= "497,409,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="48" Width="230" Stretch="Uniform"/>
+        <Image x:Name="LoginImage" Margin= "497,409,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="48" Width="230" Stretch="Uniform"/>
         <Button x:Name="LoginButton" Content="" Margin="496,409,0,0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="232" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="LoginButton_Click"/>
         <TextBlock TextWrapping="Wrap" Text="Don't have an account? Click          to sign up" Margin="502,458,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="232" FontSize="11"/>
         <Button x:Name="HereButton" Margin="641,455,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="30" Background="Transparent" BorderBrush="Transparent" Content="here" Foreground="#FFF2F2F2" FontStyle="Italic" FontWeight="Normal" Cursor="Hand" Click="HereButton_Click"/>

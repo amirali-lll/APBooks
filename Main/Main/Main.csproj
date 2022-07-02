@@ -62,9 +62,6 @@
     <Compile Include="Cart.cs" />
     <Compile Include="CheckRegularExpressions.cs" />
     <Compile Include="Manager.cs" />
-    <Compile Include="ManagerLoginPage.xaml.cs">
-      <DependentUpon>ManagerLoginPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ManagerSignUpPage.xaml.cs">
       <DependentUpon>ManagerSignUpPage.xaml</DependentUpon>
     </Compile>
@@ -72,8 +69,8 @@
     <Compile Include="NormalUserSignUpPage.xaml.cs">
       <DependentUpon>NormalUserSignUpPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserLoginPage.xaml.cs">
-      <DependentUpon>UserLoginPage.xaml</DependentUpon>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Page Include="AppMainWindow.xaml">
       <SubType>Designer</SubType>
@@ -91,10 +88,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ManagerLoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ManagerSignUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,7 +96,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserLoginPage.xaml">
+    <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

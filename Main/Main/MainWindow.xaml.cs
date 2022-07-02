@@ -29,15 +29,21 @@ namespace Main
 
         private void NormalUserButton_Click(object sender, RoutedEventArgs e)
         {
-            UserLoginPage userLoginPage = new UserLoginPage();
-            userLoginPage.Show();
+            LoginPage loginPage = new LoginPage(MOrU.normaluser);
+            Uri uri = new Uri("https://s6.uupload.ir/files/loginbutton(normaluser)_6ccy.png", UriKind.Absolute);
+            ImageSource userimgSource = new BitmapImage(uri);
+            loginPage.LoginImage.Source = userimgSource; 
+            loginPage.Show();
             Close();
         }
 
         private void ManagerButton_Click(object sender, RoutedEventArgs e)
         {
-            ManagerLoginPage managerLoginPage = new ManagerLoginPage();
-            managerLoginPage.Show();
+            LoginPage loginPage = new LoginPage(MOrU.manager);
+            Uri uri = new Uri("https://s6.uupload.ir/files/loginbutton(manager)_sp3w.png", UriKind.Absolute);
+            ImageSource managerimgSource = new BitmapImage(uri);
+            loginPage.LoginImage.Source = managerimgSource;
+            loginPage.Show();
             Close();
         }
     }

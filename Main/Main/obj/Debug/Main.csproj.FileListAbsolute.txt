@@ -4,12 +4,10 @@ C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\bin\Debug\Main.pdb
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main.csproj.AssemblyReference.cache
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main.csproj.SuggestedBindingRedirects.cache
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\MainWindow.g.cs
-C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\UserLoginPage.g.cs
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\App.g.cs
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main_MarkupCompile.cache
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main_MarkupCompile.lref
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\MainWindow.baml
-C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\UserLoginPage.baml
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main.g.resources
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main.Properties.Resources.resources
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main.csproj.GenerateResource.cache
@@ -20,7 +18,7 @@ C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\NormalUserSignUpPag
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\NormalUserSignUpPage.baml
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerSignUpPage.g.cs
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerSignUpPage.baml
-C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerLoginPage.g.cs
-C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerLoginPage.baml
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\AppMainWindow.g.cs
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\AppMainWindow.baml
+C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\LoginPage.g.cs
+C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\LoginPage.baml

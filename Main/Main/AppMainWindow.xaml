@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="AppMainWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid x:Name="Main">
-        <Image x:Name="TopBarImage" Source="https://s6.uupload.ir/files/topbarimage_lszb.png" VerticalAlignment="Top" HorizontalAlignment="Center" Height="100" Width="1200" Margin="0,0,0,0"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://s6.uupload.ir/files/allbookstab_169v.png"/>
+        </Grid.Background>
     </Grid>
 </Window>

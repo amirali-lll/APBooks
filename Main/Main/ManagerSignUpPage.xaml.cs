@@ -27,8 +27,11 @@ namespace Main
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            ManagerLoginPage managerLoginPage = new ManagerLoginPage();
-            managerLoginPage.Show();
+            LoginPage loginPage = new LoginPage(MOrU.manager);
+            Uri uri = new Uri("https://s6.uupload.ir/files/loginbutton(manager)_sp3w.png", UriKind.Absolute);
+            ImageSource imgSource = new BitmapImage(uri);
+            loginPage.LoginImage.Source = imgSource;
+            loginPage.Show();
             Close();
         }
 
@@ -61,9 +64,9 @@ namespace Main
             else
             {
                 Manager manager = new Manager(EmailBox.Text, PassWordBox.Password);
-                ManagerLoginPage managerLoginPage = new ManagerLoginPage();
+                LoginPage loginPage = new LoginPage(MOrU.manager);
                 MessageBox.Show("You signed up successfully!");
-                managerLoginPage.Show();
+                loginPage.Show();
                 Close();
             }
         }

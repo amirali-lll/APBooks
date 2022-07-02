@@ -17,17 +17,19 @@ namespace Main
     /// <summary>
     /// Interaction logic for UserLoginPage.xaml
     /// </summary>
-    public partial class UserLoginPage : Window
+    public partial class LoginPage : Window
     {
-        public UserLoginPage()
+        public MOrU AccountType { get; set; }
+        public LoginPage(MOrU AccountType)
         {
             InitializeComponent();
+            this.AccountType = AccountType;
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckRegularExpressions.CheckEmailValidation(EmailBox.Text, MOrU.normaluser))
+            if (CheckRegularExpressions.CheckEmailValidation(EmailBox.Text, AccountType))
             {
-                if(CheckRegularExpressions.CheckPasswordValidation(EmailBox.Text, PassWordBox.Password, MOrU.normaluser))
+                if(CheckRegularExpressions.CheckPasswordValidation(EmailBox.Text, PassWordBox.Password, AccountType))
                 {
                     MessageBox.Show("Welcome " + EmailBox.Text + " !");
                     Close();
@@ -43,9 +45,18 @@ namespace Main
         }
         private void HereButton_Click(object sender, RoutedEventArgs e)
         {
-            NormalUserSignUpPage normalUserSignUpPage = new NormalUserSignUpPage();
-            normalUserSignUpPage.Show();
-            Close();
+            if (AccountType == MOrU.normaluser)
+            {
+                NormalUserSignUpPage normalUserSignUpPage = new NormalUserSignUpPage();
+                normalUserSignUpPage.Show();
+                Close();
+            }
+            else
+            {
+                ManagerSignUpPage managerSignUpPage = new ManagerSignUpPage();
+                managerSignUpPage.Show();
+                Close();
+            }
         }
     }
 }
