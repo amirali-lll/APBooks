@@ -1,0 +1,12 @@
+﻿<Window x:Class="Main.AppMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Main"
+        mc:Ignorable="d"
+        Title="AppMainWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid x:Name="Main">
+        <Image x:Name="TopBarImage" Source="https://s6.uupload.ir/files/topbarimage_lszb.png" VerticalAlignment="Top" HorizontalAlignment="Center" Height="100" Width="1200" Margin="0,0,0,0"/>
+    </Grid>
+</Window>

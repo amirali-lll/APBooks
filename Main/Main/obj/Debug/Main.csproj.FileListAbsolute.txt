@@ -22,3 +22,5 @@ C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerSignUpPage.g
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerSignUpPage.baml
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerLoginPage.g.cs
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerLoginPage.baml
+C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\AppMainWindow.g.cs
+C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\AppMainWindow.baml

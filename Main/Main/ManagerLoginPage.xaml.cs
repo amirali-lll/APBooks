@@ -30,6 +30,8 @@ namespace Main
                 if (CheckRegularExpressions.CheckPasswordValidation(EmailBox.Text, PassWordBox.Password, MOrU.manager))
                 {
                     MessageBox.Show("Welcome " + EmailBox.Text + " !");
+                    AppMainWindow appMainWindow = new AppMainWindow();
+                    appMainWindow.Show();
                     Close();
                 }
             }
