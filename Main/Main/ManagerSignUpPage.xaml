@@ -1,0 +1,46 @@
+﻿<Window x:Class="Main.ManagerSignUpPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Main"
+        mc:Ignorable="d"
+        Title="ManagerSignUpPage" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid x:Name="NormalUserSignUpPage1">
+        <Grid.Background>
+            <ImageBrush ImageSource = "https://s6.uupload.ir/files/firstpagebackgroundimage_7d9c.png"/>
+        </Grid.Background>
+        <Image Source="https://s6.uupload.ir/files/apbooks_logo_yb1h.png" Margin= "461,151,378,402"/>
+        <TextBlock TextWrapping="Wrap" Text="Email :" Margin="463,263,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="53" FontSize="16"/>
+        <TextBlock TextWrapping="Wrap" Text=" Create a password :" Margin="366,0,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="152" FontSize="16"/>
+        <TextBlock TextWrapping="Wrap" Text=" Repeat the password :" Margin="351,378,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="176" FontSize="16"/>
+        <TextBox x:Name="EmailBox" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="225" TextAlignment="Left" FontSize="14" MaxLines="1" MinLines="1" MaxLength="32" Foreground="#FFEBEBEB" Margin="523,259,0,0" Background="{x:Null}">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4280B7" Offset="0.824"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <PasswordBox x:Name="PassWordBox" Margin="523,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Height="26" Width="225" Background="{x:Null}" FontSize="14" Foreground="White">
+            <PasswordBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4382BB" Offset="0.723"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </PasswordBox.BorderBrush>
+        </PasswordBox>
+        <PasswordBox x:Name="RepeatPassWordBox" Margin="523,373,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="26" Width="225" Background="{x:Null}" FontSize="14" Foreground="White">
+            <PasswordBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4382BB" Offset="0.723"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </PasswordBox.BorderBrush>
+        </PasswordBox>
+        <Image Source="https://s6.uupload.ir/files/signupbutton(manager)_vm0a.png" Margin= "494,445,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="48" Width="230" Stretch="Uniform"/>
+        <Button x:Name="SignUpButton" Content="" Margin="494,447,0,0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="232" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="SignUpButton_Click"/>
+        <Image Source="https://s6.uupload.ir/files/backicon_sxf1.png" Margin= "23,17,1117,584"/>
+        <Button x:Name="BackButton" Content="" Margin="23,17,1117,583" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.05" Click="BackButton_Click"/>
+    </Grid>
+</Window>

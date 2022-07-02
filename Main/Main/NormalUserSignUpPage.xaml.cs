@@ -27,7 +27,7 @@ namespace Main
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            UserLoginPage userLoginPage = new UserLoginPage(MOrU.normaluser);
+            UserLoginPage userLoginPage = new UserLoginPage();
             userLoginPage.Show();
             Close();
         }
@@ -66,7 +66,7 @@ namespace Main
             {
                 MessageBox.Show("The entered email is not in the correct format!");
             }
-            else if (NormalUser.AllEmails.Contains(FirstNameBox.Text))
+            else if (NormalUser.AllEmails.Contains(EmailBox.Text))
             {
                 MessageBox.Show("This email has been used before! Try another one.");
             }
@@ -82,7 +82,7 @@ namespace Main
             {
                 NormalUser normalUser = new NormalUser(FirstNameBox.Text, LastNameBox.Text, EmailBox.Text, PhoneNumberBox.Text, PassWordBox.Password);
                 MessageBox.Show("You signed up successfully!");
-                UserLoginPage userLoginPage = new UserLoginPage(MOrU.normaluser);
+                UserLoginPage userLoginPage = new UserLoginPage();
                 userLoginPage.Show();
                 Close();
             }

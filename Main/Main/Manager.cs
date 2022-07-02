@@ -17,6 +17,7 @@ namespace Main
             this.Email = Email;
             this.Password = Password;
             AllEmails.Add(Email);
+            AllManagers.Add(this);
         }
 
         //Static Collections

@@ -18,3 +18,7 @@ C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main.exe
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\Main.pdb
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\NormalUserSignUpPage.g.cs
 C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\NormalUserSignUpPage.baml
+C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerSignUpPage.g.cs
+C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerSignUpPage.baml
+C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerLoginPage.g.cs
+C:\Users\Asus\Desktop\AP Project\APBooks\Main\Main\obj\Debug\ManagerLoginPage.baml

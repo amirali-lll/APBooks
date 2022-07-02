@@ -19,7 +19,6 @@ namespace Main
                     return true;
                 }
             }
-            MessageBox.Show("The entered email address is not in the correct format!");
             return false;
         }
         public static bool CheckEmailValidation(string Email, MOrU usertype)
@@ -47,19 +46,25 @@ namespace Main
             }
             return true;
         }
-        public static bool CheckPasswordValidation(string Email, string Password)
+        public static bool CheckPasswordValidation(string Email, string Password, MOrU usertype)
         {
             if(Password == "")
             {
                 MessageBox.Show("The password box is empty!");
                 return false;
             }
-            else if(NormalUser.FindUser(Email).Password != Password)
+            if(usertype == MOrU.normaluser)
             {
-                MessageBox.Show("The password is not correct!");
-                return false;
+                if(NormalUser.FindUser(Email).Password == Password)
+                {
+                    return true;
+                }
             }
-            return true;
+            else if(Manager.FindManager(Email).Password == Password)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

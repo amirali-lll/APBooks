@@ -15,19 +15,19 @@ using System.Windows.Shapes;
 namespace Main
 {
     /// <summary>
-    /// Interaction logic for UserLoginPage.xaml
+    /// Interaction logic for ManagerLoginPage.xaml
     /// </summary>
-    public partial class UserLoginPage : Window
+    public partial class ManagerLoginPage : Window
     {
-        public UserLoginPage()
+        public ManagerLoginPage()
         {
             InitializeComponent();
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckRegularExpressions.CheckEmailValidation(EmailBox.Text, MOrU.normaluser))
+            if (CheckRegularExpressions.CheckEmailValidation(EmailBox.Text, MOrU.manager))
             {
-                if(CheckRegularExpressions.CheckPasswordValidation(EmailBox.Text, PassWordBox.Password, MOrU.normaluser))
+                if (CheckRegularExpressions.CheckPasswordValidation(EmailBox.Text, PassWordBox.Password, MOrU.manager))
                 {
                     MessageBox.Show("Welcome " + EmailBox.Text + " !");
                     Close();
@@ -43,10 +43,9 @@ namespace Main
         }
         private void HereButton_Click(object sender, RoutedEventArgs e)
         {
-            NormalUserSignUpPage normalUserSignUpPage = new NormalUserSignUpPage();
-            normalUserSignUpPage.Show();
+            ManagerSignUpPage managerSignUpPage = new ManagerSignUpPage();
+            managerSignUpPage.Show();
             Close();
         }
     }
 }
-

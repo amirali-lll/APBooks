@@ -29,14 +29,14 @@ namespace Main
 
         private void NormalUserButton_Click(object sender, RoutedEventArgs e)
         {
-            UserLoginPage userLoginPage = new UserLoginPage(MOrU.normaluser);
+            UserLoginPage userLoginPage = new UserLoginPage();
             userLoginPage.Show();
             Close();
         }
 
         private void ManagerButton_Click(object sender, RoutedEventArgs e)
         {
-            UserLoginPage managerLoginPage = new UserLoginPage(MOrU.manager);
+            ManagerLoginPage managerLoginPage = new ManagerLoginPage();
             managerLoginPage.Show();
             Close();
         }
