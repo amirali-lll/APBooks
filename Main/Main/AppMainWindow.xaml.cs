@@ -23,5 +23,20 @@ namespace Main
         {
             InitializeComponent();
         }
+
+        private void LogOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeLoginPageWindow();
+            Close();
+        }
+
+        public static void InitializeLoginPageWindow()
+        {
+            LoginPage loginPage = new LoginPage(MOrU.normaluser);
+            Uri uri = new Uri("https://s6.uupload.ir/files/loginbutton(normaluser)_mb6n.png", UriKind.Absolute);
+            ImageSource imgSource = new BitmapImage(uri);
+            loginPage.LoginImage.Source = imgSource;
+            loginPage.Show();
+        }
     }
 }
