@@ -27,6 +27,11 @@ namespace Main
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            //This lines will be deleted after assigning the database to the project:
+            NormalUser User1 = new NormalUser("Current", "User", "a@b.com", "09123456789", "AAAAaaaa");
+            User1.WalletMoney = 15000;
+            User1.VIPRemainedDays = 15;
+
             if (CheckRegularExpressions.CheckEmailValidation(EmailBox.Text, AccountType))
             {
                 if(CheckRegularExpressions.CheckPasswordValidation(EmailBox.Text, PassWordBox.Password, AccountType))
@@ -34,6 +39,8 @@ namespace Main
                     MessageBox.Show("Welcome " + EmailBox.Text + " !");
                     AppMainWindow appMainWindow = new AppMainWindow();
                     appMainWindow.CurrentUserName.Text = NormalUser.FindUser(EmailBox.Text).FirstName + " " + NormalUser.FindUser(EmailBox.Text).LastName;
+                    appMainWindow.VIPRemainedDays.Text = NormalUser.FindUser(EmailBox.Text).VIPRemainedDays + " days";
+                    appMainWindow.WallatMoneyAmount.Text = NormalUser.FindUser(EmailBox.Text).WalletMoney + "";
                     appMainWindow.Show();
                     Close();
                 }

@@ -8,9 +8,11 @@
         Title="AppMainWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid x:Name="Main">
         <Grid.Background>
-            <ImageBrush ImageSource="https://s6.uupload.ir/files/allbookstab_169v.png"/>
+            <ImageBrush ImageSource="https://s6.uupload.ir/files/user_mainappwindow_allbookstabbackground_f1my.png"/>
         </Grid.Background>
 
-        <TextBlock x:Name="CurrentUserName" Text= "" Margin="821,19,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="220" FontSize="15" TextAlignment="Center" Foreground="#FFCDD8E3" />
+        <TextBlock x:Name="CurrentUserName" Text= "" Margin="842,19,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="186" FontSize="15" TextAlignment="Center" Foreground="#FFCDD8E3" />
+        <TextBlock x:Name="WallatMoneyAmount" Text= "" Margin="1071,19,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Left" Foreground="#FFCDD8E3" />
+        <TextBlock x:Name="VIPRemainedDays" Text= "" Margin="737,19,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Right" Foreground="#FFCDD8E3" />
     </Grid>
 </Window>

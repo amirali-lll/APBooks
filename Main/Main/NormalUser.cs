@@ -15,6 +15,7 @@ namespace Main
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
         public double WalletMoney { get; set; } = 0;
+        public int VIPRemainedDays { get; set; } = 0;
         //public Cart cart { get; set; }
 
         //Constructor:
