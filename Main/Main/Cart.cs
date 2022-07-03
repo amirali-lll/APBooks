@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace Main
 {
-    internal class Cart
+    public class Cart
     {
         public NormalUser User { get; set; }
         public Cart(NormalUser User)

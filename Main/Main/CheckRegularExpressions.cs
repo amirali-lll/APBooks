@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Main
 {
-    internal class CheckRegularExpressions
+    public class CheckRegularExpressions
     {
         public static bool CheckEmailCorrection(string Email)
         {

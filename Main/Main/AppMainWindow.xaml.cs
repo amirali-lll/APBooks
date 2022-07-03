@@ -19,8 +19,10 @@ namespace Main
     /// </summary>
     public partial class AppMainWindow : Window
     {
-        public AppMainWindow()
+        public AppMainWindow(NormalUser CurrentUser)
         {
+            // Updating some info about current user:
+
             InitializeComponent();
         }
     }

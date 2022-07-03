@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Main
 {
-    internal class Manager
+    public class Manager
     {
         public string Email { get; set; }
         public string Password { get; set; }

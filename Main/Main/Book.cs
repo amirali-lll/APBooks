@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Main
 {
-    internal class Book
+    public class Book
     {
         //Properties:
         public int id { get; set; }

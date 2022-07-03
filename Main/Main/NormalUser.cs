@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Main
 {
-    internal class NormalUser
+    public class NormalUser
     {
         //Properties:
         public string FirstName { get; set; }
@@ -15,8 +15,9 @@ namespace Main
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
         public double WalletMoney { get; set; } = 0;
-        public int VIPRemainedDays { get; set; } = 0;
-        //public Cart cart { get; set; }
+        public DateTime VIPStartingTime { get; set; }
+        public DateTime VIPEndingTime { get; set; } 
+        public Cart cart { get; set; }
 
         //Constructor:
         public NormalUser(string FirstName, string LastName, string Email, string PhoneNumber, string Password)
