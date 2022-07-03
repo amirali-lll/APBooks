@@ -10,5 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="https://s6.uupload.ir/files/allbookstab_169v.png"/>
         </Grid.Background>
+
+        <TextBlock x:Name="CurrentUserName" Text= "" Margin="821,19,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="220" FontSize="15" TextAlignment="Center" Foreground="#FFCDD8E3" />
     </Grid>
 </Window>

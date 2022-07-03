@@ -32,6 +32,9 @@ namespace Main
                 if(CheckRegularExpressions.CheckPasswordValidation(EmailBox.Text, PassWordBox.Password, AccountType))
                 {
                     MessageBox.Show("Welcome " + EmailBox.Text + " !");
+                    AppMainWindow appMainWindow = new AppMainWindow();
+                    appMainWindow.CurrentUserName.Text = NormalUser.FindUser(EmailBox.Text).FirstName + " " + NormalUser.FindUser(EmailBox.Text).LastName;
+                    appMainWindow.Show();
                     Close();
                 }
             }

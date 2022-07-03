@@ -28,7 +28,7 @@ namespace Main
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             LoginPage loginPage = new LoginPage(MOrU.normaluser);
-            Uri uri = new Uri("https://s6.uupload.ir/files/loginbutton(normaluser)_6ccy.png", UriKind.Absolute);
+            Uri uri = new Uri("https://s6.uupload.ir/files/loginbutton(normaluser)_mb6n.png", UriKind.Absolute);
             ImageSource imgSource = new BitmapImage(uri);
             loginPage.LoginImage.Source = imgSource;
             loginPage.Show();
@@ -86,7 +86,9 @@ namespace Main
                 NormalUser normalUser = new NormalUser(FirstNameBox.Text, LastNameBox.Text, EmailBox.Text, PhoneNumberBox.Text, PassWordBox.Password);
                 MessageBox.Show("You signed up successfully!");
                 LoginPage loginPage = new LoginPage(MOrU.normaluser);
-                loginPage.Show();
+                Uri uri = new Uri("https://s6.uupload.ir/files/loginbutton(normaluser)_mb6n.png", UriKind.Absolute);
+                ImageSource imgSource = new BitmapImage(uri);
+                loginPage.LoginImage.Source = imgSource;
                 Close();
             }
         }
