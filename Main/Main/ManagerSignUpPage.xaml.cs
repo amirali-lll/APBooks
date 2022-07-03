@@ -27,16 +27,31 @@ namespace Main
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            LoginPage loginPage = new LoginPage(MOrU.manager);
-            Uri uri = new Uri("https://s6.uupload.ir/files/loginbutton(manager)_sp3w.png", UriKind.Absolute);
-            ImageSource imgSource = new BitmapImage(uri);
-            loginPage.LoginImage.Source = imgSource;
-            loginPage.Show();
+            InitializeLoginPage();
             Close();
         }
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
+            if (CheckEveryThingForSignUp())
+            {
+                Manager manager = new Manager(EmailBox.Text, PassWordBox.Password);
+                InitializeLoginPage();
+                Close();
+            }
+        }
+
+        public void InitializeLoginPage()
+        {
+            LoginPage loginPage = new LoginPage(MOrU.manager);
+            Uri uri = new Uri("https://s6.uupload.ir/files/loginbutton(manager)_sp3w.png", UriKind.Absolute);
+            ImageSource imgSource = new BitmapImage(uri);
+            loginPage.LoginImage.Source = imgSource;
+            loginPage.Show();
+        }
+        public bool CheckEveryThingForSignUp()
+        {
+            bool returned = false;
             if (EmailBox.Text == "")
             {
                 MessageBox.Show("The email box could not be empty!");
@@ -57,18 +72,15 @@ namespace Main
             {
                 MessageBox.Show("The entered password is not in the correct format!");
             }
-            else if(PassWordBox.Password != RepeatPassWordBox.Password)
+            else if (PassWordBox.Password != RepeatPassWordBox.Password)
             {
                 MessageBox.Show("The entered password and the repeated one are not the same!");
             }
             else
             {
-                Manager manager = new Manager(EmailBox.Text, PassWordBox.Password);
-                LoginPage loginPage = new LoginPage(MOrU.manager);
-                MessageBox.Show("You signed up successfully!");
-                loginPage.Show();
-                Close();
+                returned = true;
             }
+            return returned;
         }
     }
 }

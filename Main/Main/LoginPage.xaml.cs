@@ -22,32 +22,26 @@ namespace Main
         public MOrU AccountType { get; set; }
         public LoginPage(MOrU AccountType)
         {
-            InitializeComponent();
-            this.AccountType = AccountType;
-        }
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
             //This lines will be deleted after assigning the database to the project:
             NormalUser User1 = new NormalUser("Current", "User", "a@b.com", "09123456789", "AAAAaaaa");
             User1.WalletMoney = 15000;
             User1.VIPStartingTime = new DateTime(2022, 7, 1);
             User1.VIPEndingTime = new DateTime(2022, 7, 16);
-
+            InitializeComponent();
+            this.AccountType = AccountType;
+        }
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
             if (CheckRegularExpressions.CheckEmailValidation(EmailBox.Text, AccountType))
             {
                 if(CheckRegularExpressions.CheckPasswordValidation(EmailBox.Text, PassWordBox.Password, AccountType))
                 {
                     MessageBox.Show("Welcome " + EmailBox.Text + " !");
-                    AppMainWindow appMainWindow = new AppMainWindow(NormalUser.FindUser(EmailBox.Text));
-                    appMainWindow.CurrentUserName.Text = NormalUser.FindUser(EmailBox.Text).FirstName + " " + NormalUser.FindUser(EmailBox.Text).LastName;
-                    appMainWindow.VIPRemainedDays.Text = (NormalUser.FindUser(EmailBox.Text).VIPEndingTime.Day - NormalUser.FindUser(EmailBox.Text).VIPStartingTime.Day) + " days";
-                    appMainWindow.WallatMoneyAmount.Text = NormalUser.FindUser(EmailBox.Text).WalletMoney + "";
-                    appMainWindow.Show();
+                    InitializeAppMainWindow();
                     Close();
                 }
             }
         }
-
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow w = new MainWindow();
@@ -68,6 +62,14 @@ namespace Main
                 managerSignUpPage.Show();
                 Close();
             }
+        }
+        public void InitializeAppMainWindow()
+        {
+            AppMainWindow appMainWindow = new AppMainWindow(NormalUser.FindUser(EmailBox.Text));
+            appMainWindow.CurrentUserName.Text = NormalUser.FindUser(EmailBox.Text).FirstName + " " + NormalUser.FindUser(EmailBox.Text).LastName;
+            appMainWindow.VIPRemainedDays.Text = (NormalUser.FindUser(EmailBox.Text).VIPEndingTime.Day - NormalUser.FindUser(EmailBox.Text).VIPStartingTime.Day) + " days";
+            appMainWindow.WallatMoneyAmount.Text = NormalUser.FindUser(EmailBox.Text).WalletMoney + "";
+            appMainWindow.Show();
         }
     }
 }

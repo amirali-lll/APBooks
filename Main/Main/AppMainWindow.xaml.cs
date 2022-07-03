@@ -21,8 +21,6 @@ namespace Main
     {
         public AppMainWindow(NormalUser CurrentUser)
         {
-            // Updating some info about current user:
-
             InitializeComponent();
         }
     }
