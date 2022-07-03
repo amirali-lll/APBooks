@@ -7,16 +7,150 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource = "https://s6.uupload.ir/files/firstpagebackgroundimage_7d9c.png"/>
-        </Grid.Background>
-        <Grid>
-            <Image Source="https://s6.uupload.ir/files/apbooks_logo_yb1h.png" Margin= "454,159,385,370"/>
-            <Image Source="https://s6.uupload.ir/files/i_39_m_a_normal_user_botton_xc0h.png" Margin="600,272,311,272"/>
-            <Button x:Name="NormalUserButton" Margin="600,0,0,0" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Left" Height="47" Width="274" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="NormalUserButton_Click"/>
-            <Image Source="https://s6.uupload.ir/files/i_39_m_a_manager_one_botton_z37b.png" Margin="306,272,605,272"/>
-            <Button x:Name="ManagerButton" Margin="306,0,0,0" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Left" Height="47" Width="274" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="ManagerButton_Click"/>
-        </Grid>
+        <TabControl x:Name="IntroTab" Height="701" VerticalAlignment="Top" Margin="0,-42,0,0">
+            <TabItem Name="UserOrManagerTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource = "https://s6.uupload.ir/files/firstpagebackgroundimage_7d9c.png"/>
+                    </Grid.Background>
+                    <Image Source="https://s6.uupload.ir/files/apbooks_logo_yb1h.png" Margin= "454,159,385,370"/>
+                    <Image Source="https://s6.uupload.ir/files/i_39_m_a_normal_user_botton_xc0h.png" Margin="600,272,311,272"/>
+                    <Button x:Name="NormalUserButton" Margin="600,0,0,0" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Left" Height="47" Width="274" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="NormalUserButton_Click"/>
+                    <Image Source="https://s6.uupload.ir/files/i_39_m_a_manager_one_botton_z37b.png" Margin="306,272,605,272"/>
+                    <Button x:Name="ManagerButton" Margin="306,0,0,0" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Left" Height="47" Width="274" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="ManagerButton_Click"/>
+                </Grid>
+            </TabItem>
 
+            <TabItem Name="LoginTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource = "https://s6.uupload.ir/files/firstpagebackgroundimage_7d9c.png"/>
+                    </Grid.Background>
+                    <Image Source="https://s6.uupload.ir/files/apbooks_logo_yb1h.png" Margin= "468,164,371,389"/>
+                    <TextBlock TextWrapping="Wrap" Text="Email :" Margin="459,287,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="50" FontSize="16"/>
+                    <TextBlock TextWrapping="Wrap" Text="Password :" Margin="435,344,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="74" FontSize="16"/>
+                    <TextBox x:Name="LoginTabEmailBox" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="212" TextAlignment="Left" FontSize="14" MaxLines="1" MinLines="1" MaxLength="32" Foreground="#FFEBEBEB" Margin="516,285,0,0" Background="{x:Null}">
+                        <TextBox.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4280B7" Offset="0.824"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.BorderBrush>
+                    </TextBox>
+                    <PasswordBox x:Name="LoginTabPassWordBox" Margin="516,340,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="26" Width="212" Background="{x:Null}" FontSize="14" Foreground="White">
+                        <PasswordBox.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4382BB" Offset="0.723"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </PasswordBox.BorderBrush>
+                    </PasswordBox>
+                    <Image x:Name="LoginImage" Margin= "497,409,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="48" Width="230" Stretch="Uniform"/>
+                    <Button x:Name="LoginButton" Content="" Margin="496,409,0,0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="232" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="LoginButton_Click"/>
+                    <TextBlock TextWrapping="Wrap" Text="Don't have an account? Click          to sign up" Margin="502,458,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="232" FontSize="11"/>
+                    <Button x:Name="HereButton" Margin="641,455,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="30" Background="Transparent" BorderBrush="Transparent" Content="here" Foreground="#FFF2F2F2" FontStyle="Italic" FontWeight="Normal" Cursor="Hand" Click="HereButton_Click"/>
+                    <Image Source="https://s6.uupload.ir/files/backicon_sxf1.png" Margin= "23,17,1117,584"/>
+                    <Button x:Name="LoginTabBackButton" Content="" Margin="23,17,1117,583" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.05" Click="LoginTabBackButton_Click"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="NormalUserSignUpTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource = "https://s6.uupload.ir/files/firstpagebackgroundimage_7d9c.png"/>
+                    </Grid.Background>
+                    <Image Source="https://s6.uupload.ir/files/apbooks_logo_yb1h.png" Margin= "461,113,378,440"/>
+                    <TextBlock TextWrapping="Wrap" Text="First Name :" Margin="369,226,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="92" FontSize="16"/>
+                    <TextBlock TextWrapping="Wrap" Text="Last Name :" Margin="579,226,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="92" FontSize="16"/>
+                    <TextBlock TextWrapping="Wrap" Text="Phone Number :" Margin="395,287,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="122" FontSize="16"/>
+                    <TextBlock TextWrapping="Wrap" Text="Email :" Margin="464,338,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="53" FontSize="16"/>
+                    <TextBlock TextWrapping="Wrap" Text="Password :" Margin="435,396,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="74" FontSize="16"/>
+                    <TextBox x:Name="FirstNameBox" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="103" TextAlignment="Left" FontSize="14" MaxLines="1" MinLines="1" MaxLength="32" Foreground="#FFEBEBEB" Margin="466,218,0,0" Background="{x:Null}">
+                        <TextBox.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4280B7" Offset="0.824"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.BorderBrush>
+                    </TextBox>
+                    <TextBox x:Name="LastNameBox" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="103" TextAlignment="Left" FontSize="14" MaxLines="1" MinLines="1" MaxLength="32" Foreground="#FFEBEBEB" Margin="675,218,0,0" Background="{x:Null}">
+                        <TextBox.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4280B7" Offset="0.824"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.BorderBrush>
+                    </TextBox>
+                    <TextBox x:Name="PhoneNumberBox" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="225" TextAlignment="Left" FontSize="14" MaxLines="1" MinLines="1" MaxLength="32" Foreground="#FFEBEBEB" Margin="523,279,0,0" Background="{x:Null}">
+                        <TextBox.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4280B7" Offset="0.824"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.BorderBrush>
+                    </TextBox>
+                    <TextBox x:Name="NormalUserSignUpTabEmailBox" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="225" TextAlignment="Left" FontSize="14" MaxLines="1" MinLines="1" MaxLength="32" Foreground="#FFEBEBEB" Margin="523,334,0,0" Background="{x:Null}">
+                        <TextBox.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4280B7" Offset="0.824"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.BorderBrush>
+                    </TextBox>
+                    <PasswordBox x:Name="NormalUserSignUpTabPassWordBox" Margin="523,391,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="26" Width="225" Background="{x:Null}" FontSize="14" Foreground="White">
+                        <PasswordBox.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4382BB" Offset="0.723"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </PasswordBox.BorderBrush>
+                    </PasswordBox>
+                    <Image Source="https://s6.uupload.ir/files/signupbutton_psdy.png" Margin= "496,458,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="48" Width="230" Stretch="Uniform"/>
+                    <Button x:Name="NormalUserSignUpTabSignUpButton" Content="" Margin="495,457,0,0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="232" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="NormalUserSignUpTabSignUpButton_Click"/>
+                    <Image Source="https://s6.uupload.ir/files/backicon_sxf1.png" Margin= "23,17,1117,584"/>
+                    <Button x:Name="NormalUserSignUpTabBackButton" Content="" Margin="23,17,1117,583" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.05" Click="NormalUserSignUpTabBackButton_Click"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="ManagerSignUpTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource = "https://s6.uupload.ir/files/firstpagebackgroundimage_7d9c.png"/>
+                    </Grid.Background>
+                    <Image Source="https://s6.uupload.ir/files/apbooks_logo_yb1h.png" Margin= "461,151,378,402"/>
+                    <TextBlock TextWrapping="Wrap" Text="Email :" Margin="463,263,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="53" FontSize="16"/>
+                    <TextBlock TextWrapping="Wrap" Text=" Create a password :" Margin="366,0,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="152" FontSize="16"/>
+                    <TextBlock TextWrapping="Wrap" Text=" Repeat the password :" Margin="351,378,0,0" Foreground="#FFBDD7EE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="176" FontSize="16"/>
+                    <TextBox x:Name="ManagerSignUpTabEmailBox" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="225" TextAlignment="Left" FontSize="14" MaxLines="1" MinLines="1" MaxLength="32" Foreground="#FFEBEBEB" Margin="523,259,0,0" Background="{x:Null}">
+                        <TextBox.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4280B7" Offset="0.824"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.BorderBrush>
+                    </TextBox>
+                    <PasswordBox x:Name="ManagerSignUpTabPassWordBox" Margin="523,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Height="26" Width="225" Background="{x:Null}" FontSize="14" Foreground="White">
+                        <PasswordBox.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4382BB" Offset="0.723"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </PasswordBox.BorderBrush>
+                    </PasswordBox>
+                    <PasswordBox x:Name="ManagerSignUpTabRepeatPassWordBox" Margin="523,373,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="26" Width="225" Background="{x:Null}" FontSize="14" Foreground="White">
+                        <PasswordBox.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4382BB" Offset="0.723"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </PasswordBox.BorderBrush>
+                    </PasswordBox>
+                    <Image Source="https://s6.uupload.ir/files/signupbutton(manager)_vm0a.png" Margin= "494,445,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="48" Width="230" Stretch="Uniform"/>
+                    <Button x:Name="ManagerSignUpTabSignUpButton" Content="" Margin="494,447,0,0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="232" BorderBrush="Transparent" Cursor="Hand" Opacity="0.1" Click="ManagerSignUpTabSignUpButton_Click"/>
+                    <Image Source="https://s6.uupload.ir/files/backicon_sxf1.png" Margin= "23,17,1117,584"/>
+                    <Button x:Name="ManagerSignUpTabBackButton" Content="" Margin="23,17,1117,583" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.05" Click="ManagerSignUpTabBackButton_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
