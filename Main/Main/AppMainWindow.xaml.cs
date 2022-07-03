@@ -38,5 +38,15 @@ namespace Main
             loginPage.LoginImage.Source = imgSource;
             loginPage.Show();
         }
+
+        private void AllBooksButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuTab.SelectedItem = AllBooksTab;
+        }
+
+        private void MyLibraryButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuTab.SelectedItem = MyLibraryTab;
+        }
     }
 }

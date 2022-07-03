@@ -7,30 +7,38 @@
         mc:Ignorable="d"
         Title="AppMainWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid x:Name="Main">
-        <TabControl Height="701" VerticalAlignment="Top" Margin="0,-42,0,0">
+        <TabControl x:Name="MenuTab" Height="701" VerticalAlignment="Top" Margin="0,-42,0,0">
             <TabItem Name="AllBooksTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
                 <Grid>
                     <Grid.Background>
-                        <ImageBrush ImageSource="https://s6.uupload.ir/files/user_mainappwindow_allbookstabbackground_f1my.png"/>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/user_mainappwindow_allbookstabbackground_ad60.png"/>
                     </Grid.Background>
+                </Grid>
+            </TabItem>
 
-                    <TextBlock x:Name="CurrentUserName" Text= "" Margin="842,19,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="186" FontSize="15" TextAlignment="Center" Foreground="#FFCDD8E3" />
-                    <TextBlock x:Name="WallatMoneyAmount" Text= "" Margin="1071,19,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Left" Foreground="#FFCDD8E3" />
-                    <TextBlock x:Name="VIPRemainedDays" Text= "" Margin="737,19,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Right" Foreground="#FFCDD8E3" />
-
-                    <Button Margin="0,76,0,0" Name="AllBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
-                    <Button Margin="0,123,0,0" Name="MyLibraryButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
-                    <Button Margin="0,172,0,0" Name="SearchButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
-                    <Button Margin="0,220,0,0" Name="CartButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
-                    <Button Margin="0,271,0,0" Name="MyWalletButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
-                    <Button Margin="0,320,0,0" Name="MarkedBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
-                    <Button Margin="0,370,0,0" Name="VIPSubscriptionButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
-                    <Button Margin="0,418,0,0" Name="ProfileButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
-                    <Button Margin="0,466,0,0" Name="LogOutButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="LogOutButton_Click"/>
-
+            <TabItem Name="MyLibraryTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/user_mainappwindow_mylibrarytabbackground_rsn4.png"/>
+                    </Grid.Background>
                 </Grid>
             </TabItem>
         </TabControl>
 
-         </Grid>
+        <TextBlock x:Name="CurrentUserName" Text= "" Margin="836,19,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="186" FontSize="15" TextAlignment="Center" Foreground="#FFCDD8E3" />
+        <TextBlock x:Name="WallatMoneyAmount" Text= "" Margin="1065,19,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Left" Foreground="#FFCDD8E3" />
+        <TextBlock x:Name="VIPRemainedDays" Text= "" Margin="731,19,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Right" Foreground="#FFCDD8E3" />
+
+        <Button Margin="0,80,0,0" Name="AllBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="AllBooksButton_Click"/>
+        <Button Margin="0,127,0,0" Name="MyLibraryButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="MyLibraryButton_Click"/>
+        <Button Margin="0,176,0,0" Name="SearchButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
+        <Button Margin="0,224,0,0" Name="CartButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
+        <Button Margin="0,275,0,0" Name="MyWalletButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
+        <Button Margin="0,324,0,0" Name="MarkedBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
+        <Button Margin="0,374,0,0" Name="VIPSubscriptionButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
+        <Button Margin="0,422,0,0" Name="ProfileButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
+        <Button Margin="0,470,0,0" Name="LogOutButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="LogOutButton_Click"/>
+        <Button Margin="0,596,0,0" Name="AboutUsButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="38" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
+
+    </Grid>
 </Window>
