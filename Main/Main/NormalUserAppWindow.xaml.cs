@@ -23,6 +23,7 @@ namespace Main
         {
             //This lines will be deleted after assigning the database:
             Book book1 = new Book(1, "The Alchemist", "Pauolo Coelho", 136, 55000, 20, "");
+
             InitializeComponent();
         }
 
@@ -53,16 +54,33 @@ namespace Main
             List<Book> ToBeShown = new List<Book>();
             foreach(Book book in Book.AllBooks)
             {
-                if (book.Name.Contains(BookNameSearchBox.Text) || book.AuthorName.Contains(AuthorNameSearchBox.Text))
+                if (AllSubstrings(book.Name.ToLower()).Contains(BookNameSearchBox.Text.ToLower()) || AllSubstrings(book.AuthorName.ToLower()).Contains(AuthorNameSearchBox.Text.ToLower()))
                 {
                     ToBeShown.Add(book);
                 }
             }
 
-            if(ToBeShown.Count == 0)
+            if(BookNameSearchBox.Text == "" && AuthorNameSearchBox.Text == "")
+            {
+                MessageBox.Show("You must fill at least one of the search boxes!");
+            }
+            else if(ToBeShown.Count == 0)
             {
                 MessageBox.Show("No books found with such properties...!");
             }
+        }
+
+        public static List<string> AllSubstrings(string str)
+        {
+            List<string> list = new List<string>();
+            for(int i = 1; i < str.Length; i++)
+            {
+                for(int j = 0; j < str.Length - i; j++)
+                {
+                    list.Add(str.Substring(j, i));
+                }
+            }
+            return list;
         }
     }
 }
