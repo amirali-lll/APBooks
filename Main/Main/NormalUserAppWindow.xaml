@@ -35,6 +35,15 @@
                     <Button x:Name="SearchButton" Margin="677,98,400,496" VerticalAlignment="Center" HorizontalAlignment="Center" Height="55" Width="120" BorderBrush="Transparent" Background="{x:Null}" Opacity="0.2" Cursor="Hand" Click="SearchButton_Click"/>
                 </Grid>
             </TabItem>
+
+            <TabItem Name="CartTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/carttabbackground_vyz4.png"/>
+                    </Grid.Background>
+
+                </Grid>
+            </TabItem>
         </TabControl>
 
         <TextBlock x:Name="CurrentUserName" Text= "" Margin="836,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="186" FontSize="15" TextAlignment="Center" Foreground="#FFCDD8E3" />
