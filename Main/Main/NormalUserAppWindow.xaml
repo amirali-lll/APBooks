@@ -23,15 +23,27 @@
                     </Grid.Background>
                 </Grid>
             </TabItem>
+
+            <TabItem Name="SearchTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/searchtabbackground_41x4.png"/>
+                    </Grid.Background>
+
+                    <TextBox x:Name="BookNameSearchBox" Margin="421,128,597,499" FontSize="16" BorderBrush="{x:Null}"/>
+                    <TextBox x:Name="AuthorNameSearchBox" Margin="920,128,98,499" FontSize="16" BorderBrush="{x:Null}"/>
+                    <Button x:Name="SearchButton" Margin="677,98,400,496" VerticalAlignment="Center" HorizontalAlignment="Center" Height="55" Width="120" BorderBrush="Transparent" Background="{x:Null}" Opacity="0.2" Cursor="Hand" Click="SearchButton_Click"/>
+                </Grid>
+            </TabItem>
         </TabControl>
 
-        <TextBlock x:Name="CurrentUserName" Text= "" Margin="836,21,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="186" FontSize="15" TextAlignment="Center" Foreground="#FFCDD8E3" />
-        <TextBlock x:Name="WallatMoneyAmount" Text= "" Margin="1065,21,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Left" Foreground="#FFCDD8E3" />
-        <TextBlock x:Name="VIPRemainedDays" Text= "" Margin="731,21,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Right" Foreground="#FFCDD8E3" />
+        <TextBlock x:Name="CurrentUserName" Text= "" Margin="836,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="186" FontSize="15" TextAlignment="Center" Foreground="#FFCDD8E3" />
+        <TextBlock x:Name="WallatMoneyAmount" Text= "" Margin="1065,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Left" Foreground="#FFCDD8E3" />
+        <TextBlock x:Name="VIPRemainedDays" Text= "" Margin="731,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Right" Foreground="#FFCDD8E3" />
 
         <Button Margin="0,80,0,0" Name="AllBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="AllBooksButton_Click"/>
         <Button Margin="0,127,0,0" Name="MyLibraryButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="MyLibraryButton_Click"/>
-        <Button Margin="0,176,0,0" Name="SearchButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
+        <Button Margin="0,176,0,0" Name="SearchTabButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="SearchTabButton_Click"/>
         <Button Margin="0,224,0,0" Name="CartButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
         <Button Margin="0,275,0,0" Name="MyWalletButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
         <Button Margin="0,324,0,0" Name="MarkedBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>

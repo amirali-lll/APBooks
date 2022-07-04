@@ -47,7 +47,7 @@ namespace Main
         }
 
         //Static Collections:
-        public List<Book> AllBooks { get; set; } = new List<Book>();
-        public List<int> Rates { get; set; } = new List<int> { };
+        public static List<Book> AllBooks { get; set; } = new List<Book>();
+        public static List<int> Rates { get; set; } = new List<int> { };
     }
 }

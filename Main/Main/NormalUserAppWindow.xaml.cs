@@ -21,6 +21,8 @@ namespace Main
     {
         public NormalUserAppWindow(NormalUser CurrentUser)
         {
+            //This lines will be deleted after assigning the database:
+            Book book1 = new Book(1, "The Alchemist", "Pauolo Coelho", 136, 55000, 20, "");
             InitializeComponent();
         }
 
@@ -39,6 +41,28 @@ namespace Main
         private void MyLibraryButton_Click(object sender, RoutedEventArgs e)
         {
             MenuTab.SelectedItem = MyLibraryTab;
+        }
+
+        private void SearchTabButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuTab.SelectedItem = SearchTab;
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            List<Book> ToBeShown = new List<Book>();
+            foreach(Book book in Book.AllBooks)
+            {
+                if (book.Name.Contains(BookNameSearchBox.Text) || book.AuthorName.Contains(AuthorNameSearchBox.Text))
+                {
+                    ToBeShown.Add(book);
+                }
+            }
+
+            if(ToBeShown.Count == 0)
+            {
+                MessageBox.Show("No books found with such properties...!");
+            }
         }
     }
 }
