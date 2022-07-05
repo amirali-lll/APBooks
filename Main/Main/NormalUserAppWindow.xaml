@@ -60,6 +60,14 @@
                     <Button x:Name="AddButton" Margin="1005,105,62,490" Background="Transparent" BorderBrush="Transparent" Click="AddButton_Click" Opacity="0.2"/>
                 </Grid>
             </TabItem>
+
+            <TabItem Name="MarkedBooksTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/markedbookstabbackground_sb8h.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
         </TabControl>
 
         <TextBlock x:Name="CurrentUserName" Text= "" Margin="836,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="186" FontSize="15" TextAlignment="Center" Foreground="#FFCDD8E3" />
