@@ -19,9 +19,23 @@ namespace Main
     /// </summary>
     public partial class NormalUserAppWindow : Window
     {
+        public NormalUser CurrentUser { get; set; }
         public NormalUserAppWindow(NormalUser CurrentUser)
         {
+            this.CurrentUser = CurrentUser;
             InitializeComponent();
+        }
+        public static void InitializeNormalUserAppMainWindow(NormalUser CurrentUser)
+        {
+            NormalUserAppWindow appMainWindow = new NormalUserAppWindow(CurrentUser);
+            appMainWindow.CurrentUserName.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
+            appMainWindow.VIPRemainedDays.Text = (CurrentUser.VIPEndingTime.Day - CurrentUser.VIPStartingTime.Day) + " days";
+            appMainWindow.WallatMoneyAmount.Text = CurrentUser.WalletMoney + "";
+            appMainWindow.CostBox.Text = CurrentUser.cart.Cost() + "";
+            appMainWindow.DiscountBox.Text = CurrentUser.cart.Discount() + "";
+            appMainWindow.TotalCostBox.Text = CurrentUser.cart.CostWithDiscount() + "";
+            appMainWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
+            appMainWindow.Show();
         }
 
         private void LogOutButton_Click(object sender, RoutedEventArgs e)
@@ -83,6 +97,13 @@ namespace Main
         private void CartButton_Click(object sender, RoutedEventArgs e)
         {
             MenuTab.SelectedItem = CartTab;
+        }
+
+        private void BuyButton_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentUser.cart.BuyWithWallet();
+            InitializeNormalUserAppMainWindow(CurrentUser);
+            Close();
         }
     }
 }

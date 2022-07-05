@@ -46,7 +46,9 @@ namespace Main
                 {
                     User.BoughtBooks.Add(book);
                 }
-                CartBooks.Clear();
+                User.WalletMoney = User.WalletMoney - CostWithDiscount();
+                this.CartBooks.Clear();
+                MessageBox.Show("Books bought successfully!");
             }
         }
         public void ManualBuy()

@@ -70,15 +70,7 @@ namespace Main
         public void InitializeAppMainWindow()
         {
             NormalUser CurrentUser = NormalUser.FindUser(LoginTabEmailBox.Text);
-            NormalUserAppWindow appMainWindow = new NormalUserAppWindow(CurrentUser);
-            appMainWindow.CurrentUserName.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
-            appMainWindow.VIPRemainedDays.Text = (CurrentUser.VIPEndingTime.Day - CurrentUser.VIPStartingTime.Day) + " days";
-            appMainWindow.WallatMoneyAmount.Text = CurrentUser.WalletMoney + "";
-            appMainWindow.CostBox.Text = CurrentUser.cart.Cost() + "";
-            appMainWindow.DiscountBox.Text = CurrentUser.cart.Discount() + "";
-            appMainWindow.TotalCostBox.Text = CurrentUser.cart.CostWithDiscount() + "";
-            appMainWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
-            appMainWindow.Show();
+            NormalUserAppWindow.InitializeNormalUserAppMainWindow(CurrentUser);
         }
 
         private void LoginTabBackButton_Click(object sender, RoutedEventArgs e)

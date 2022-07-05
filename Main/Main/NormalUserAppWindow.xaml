@@ -45,6 +45,8 @@
                     <TextBlock x:Name="DiscountBox" Margin="522,126,635,507" FontSize="16" TextAlignment="Center" Foreground="White" FontWeight="Bold" />
                     <TextBlock x:Name="TotalCostBox" Margin="652,99,380,504" FontSize="38" TextAlignment="Center" Foreground="#FF5F5F5F" FontWeight="Bold" />
                     <TextBlock x:Name="BooksNumBox" Margin="391,98,757,505" FontSize="38" TextAlignment="Center" Foreground="#FFBE5108"/>
+                    <Button x:Name="PayButton" Margin="906,94,160,506" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.2"/>
+                    <Button x:Name="BuyButton" Margin="1036,94,30,506" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.2" Click="BuyButton_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
