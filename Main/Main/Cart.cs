@@ -76,9 +76,9 @@ namespace Main
             }
             return sum;
         }
-        public int Discount()
+        public double Discount()
         {
-            return 100 - (int)(CostWithDiscount() / Cost() * 100);
+            return 100 - (CostWithDiscount() / Cost() * 100);
         }
     }
 }

@@ -30,11 +30,12 @@ namespace Main
             NormalUserAppWindow appMainWindow = new NormalUserAppWindow(CurrentUser);
             appMainWindow.CurrentUserName.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
             appMainWindow.VIPRemainedDays.Text = (CurrentUser.VIPEndingTime.Day - CurrentUser.VIPStartingTime.Day) + " days";
-            appMainWindow.WallatMoneyAmount.Text = CurrentUser.WalletMoney + "";
-            appMainWindow.CostBox.Text = CurrentUser.cart.Cost() + "";
-            appMainWindow.DiscountBox.Text = CurrentUser.cart.Discount() + "";
-            appMainWindow.TotalCostBox.Text = CurrentUser.cart.CostWithDiscount() + "";
+            appMainWindow.WallatMoneyAmount.Text = (int)CurrentUser.WalletMoney + "";
+            appMainWindow.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
+            appMainWindow.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
+            appMainWindow.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
             appMainWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
+            appMainWindow.WalletMoneyBox.Text = (int)CurrentUser.WalletMoney + "";
             appMainWindow.Show();
         }
 
@@ -104,6 +105,21 @@ namespace Main
             CurrentUser.cart.BuyWithWallet();
             InitializeNormalUserAppMainWindow(CurrentUser);
             Close();
+        }
+
+        private void PayButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Opening pay window
+        }
+
+        private void MyWalletButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuTab.SelectedItem = MyWalletTab;
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Showing Pay Window...
         }
     }
 }

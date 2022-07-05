@@ -45,8 +45,19 @@
                     <TextBlock x:Name="DiscountBox" Margin="522,126,635,507" FontSize="16" TextAlignment="Center" Foreground="White" FontWeight="Bold" />
                     <TextBlock x:Name="TotalCostBox" Margin="652,99,380,504" FontSize="38" TextAlignment="Center" Foreground="#FF5F5F5F" FontWeight="Bold" />
                     <TextBlock x:Name="BooksNumBox" Margin="391,98,757,505" FontSize="38" TextAlignment="Center" Foreground="#FFBE5108"/>
-                    <Button x:Name="PayButton" Margin="906,94,160,506" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.2"/>
+                    <Button x:Name="PayButton" Margin="906,94,160,506" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.2" Click="PayButton_Click"/>
                     <Button x:Name="BuyButton" Margin="1036,94,30,506" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.2" Click="BuyButton_Click"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="MyWalletTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/mywallettabbackground_t236.png"/>
+                    </Grid.Background>
+                    <TextBlock x:Name="WalletMoneyBox" Margin="418,100,614,503" FontSize="38" TextAlignment="Center" Foreground="#FF6B80B3" FontWeight="Bold" />
+                    <TextBox x:Name="AddMoneyBox" Margin="803,133,215,494" FontSize="16" BorderBrush="{x:Null}"/>
+                    <Button x:Name="AddButton" Margin="1005,105,62,490" Background="Transparent" BorderBrush="Transparent" Click="AddButton_Click" Opacity="0.2"/>
                 </Grid>
             </TabItem>
         </TabControl>
@@ -59,7 +70,7 @@
         <Button Margin="0,127,0,0" Name="MyLibraryButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="MyLibraryButton_Click"/>
         <Button Margin="0,176,0,0" Name="SearchTabButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="SearchTabButton_Click"/>
         <Button Margin="0,224,0,0" Name="CartButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="CartButton_Click"/>
-        <Button Margin="0,275,0,0" Name="MyWalletButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
+        <Button Margin="0,275,0,0" Name="MyWalletButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="MyWalletButton_Click"/>
         <Button Margin="0,324,0,0" Name="MarkedBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
         <Button Margin="0,374,0,0" Name="VIPSubscriptionButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
         <Button Margin="0,422,0,0" Name="ProfileButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>

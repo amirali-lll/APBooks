@@ -19,7 +19,7 @@ namespace Main
         public int NumberOfSells { get; set; } = 0;
 
         //Consructor:
-        public Book(int id, string Name, string AuthorName, int NumberOfPages, double Cost, int DiscountPercentage, string Description)
+        public Book(int id, string Name, string AuthorName, int NumberOfPages, int Cost, int DiscountPercentage, string Description)
         {
             this.id = id;
             this.Name = Name;
