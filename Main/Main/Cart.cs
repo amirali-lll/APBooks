@@ -14,7 +14,7 @@ namespace Main
         {
             this.User = User;
         }
-        public static List<Book> CartBooks { get; set; } = new List<Book>();
+        public List<Book> CartBooks { get; set; } = new List<Book>();
         public void Add(Book book)
         {
             if (!CartBooks.Contains(book))
@@ -74,9 +74,9 @@ namespace Main
             }
             return sum;
         }
-        public double Discount()
+        public int Discount()
         {
-            return 100 - (CostWithDiscount() / Cost() * 100);
+            return 100 - (int)(CostWithDiscount() / Cost() * 100);
         }
     }
 }

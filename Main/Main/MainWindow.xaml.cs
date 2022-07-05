@@ -27,7 +27,10 @@ namespace Main
         public MainWindow()
         {
             //This lines will be deleted after assigning data base:
+            Book book1 = new Book(1, "The Alchemist", "Pauolo Coelho", 136, 55000, 20, "");
             NormalUser User1 = new NormalUser("Current", "User", "a@b.com", "09123456789", "AAAAaaaa");
+            User1.cart.Add(book1);
+
             User1.WalletMoney = 65000;
             User1.VIPStartingTime = new DateTime(2022, 7, 1);
             User1.VIPEndingTime = new DateTime(2022, 7, 30);
@@ -66,10 +69,15 @@ namespace Main
 
         public void InitializeAppMainWindow()
         {
-            NormalUserAppWindow appMainWindow = new NormalUserAppWindow(NormalUser.FindUser(LoginTabEmailBox.Text));
-            appMainWindow.CurrentUserName.Text = NormalUser.FindUser(LoginTabEmailBox.Text).FirstName + " " + NormalUser.FindUser(LoginTabEmailBox.Text).LastName;
-            appMainWindow.VIPRemainedDays.Text = (NormalUser.FindUser(LoginTabEmailBox.Text).VIPEndingTime.Day - NormalUser.FindUser(LoginTabEmailBox.Text).VIPStartingTime.Day) + " days";
-            appMainWindow.WallatMoneyAmount.Text = NormalUser.FindUser(LoginTabEmailBox.Text).WalletMoney + "";
+            NormalUser CurrentUser = NormalUser.FindUser(LoginTabEmailBox.Text);
+            NormalUserAppWindow appMainWindow = new NormalUserAppWindow(CurrentUser);
+            appMainWindow.CurrentUserName.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
+            appMainWindow.VIPRemainedDays.Text = (CurrentUser.VIPEndingTime.Day - CurrentUser.VIPStartingTime.Day) + " days";
+            appMainWindow.WallatMoneyAmount.Text = CurrentUser.WalletMoney + "";
+            appMainWindow.CostBox.Text = CurrentUser.cart.Cost() + "";
+            appMainWindow.DiscountBox.Text = CurrentUser.cart.Discount() + "";
+            appMainWindow.TotalCostBox.Text = CurrentUser.cart.CostWithDiscount() + "";
+            appMainWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
             appMainWindow.Show();
         }
 

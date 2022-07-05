@@ -21,9 +21,6 @@ namespace Main
     {
         public NormalUserAppWindow(NormalUser CurrentUser)
         {
-            //This lines will be deleted after assigning the database:
-            Book book1 = new Book(1, "The Alchemist", "Pauolo Coelho", 136, 55000, 20, "");
-
             InitializeComponent();
         }
 
@@ -81,6 +78,11 @@ namespace Main
                 }
             }
             return list;
+        }
+
+        private void CartButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuTab.SelectedItem = CartTab;
         }
     }
 }

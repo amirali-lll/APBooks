@@ -34,7 +34,7 @@ namespace Main
         //Methods:
         public double CostWithDiscount()
         {
-            return Cost * (100 - DiscountPercentage);
+            return Cost * (100 - DiscountPercentage)/100;
         }
         public double AverageRate()
         {

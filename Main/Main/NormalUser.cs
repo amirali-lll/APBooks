@@ -16,7 +16,7 @@ namespace Main
         public string Password { get; set; }
         public double WalletMoney { get; set; } = 0;
         public DateTime VIPStartingTime { get; set; }
-        public DateTime VIPEndingTime { get; set; } 
+        public DateTime VIPEndingTime { get; set; }
         public Cart cart { get; set; }
 
         //Constructor:
@@ -29,7 +29,7 @@ namespace Main
             this.Password = Password;
             AllEmails.Add(Email);
             AllUsers.Add(this);
-            // = new Cart(this);
+            cart = new Cart(this);
         }
 
         //Collections:
