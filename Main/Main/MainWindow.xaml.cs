@@ -32,8 +32,9 @@ namespace Main
             User1.cart.Add(book1);
 
             User1.WalletMoney = 65000;
-            User1.VIPStartingTime = new DateTime(2022, 7, 1);
             VIP VIP1 = new VIP(15);
+            User1.VIPStartingTime = new DateTime(2022, 7, 1);
+            User1.VIPEndingTime = new DateTime(2022, 7, User1.VIPStartingTime.Day + VIP1.Duration);
             User1.VIPSubscription = VIP1;
             InitializeComponent();
         }
