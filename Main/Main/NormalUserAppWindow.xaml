@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="AppMainWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid x:Name="Main">
-        <TabControl x:Name="MenuTab" Height="701" VerticalAlignment="Top" Margin="0,-42,0,0">
-            <TabItem Name="AllBooksTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+        <TabControl x:Name="MenuTab" Height="742" VerticalAlignment="Top" Margin="0,-83,0,0">
+            <TabItem Name="AllBooksTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/user_mainappwindow_allbookstabbackground_ad60.png"/>
@@ -16,7 +16,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Name="MyLibraryTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+            <TabItem Name="MyLibraryTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/user_mainappwindow_mylibrarytabbackground_rsn4.png"/>
@@ -24,7 +24,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Name="SearchTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+            <TabItem Name="SearchTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/searchtabbackground_41x4.png"/>
@@ -36,7 +36,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Name="CartTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+            <TabItem Name="CartTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/carttabbackground_vyz4.png"/>
@@ -50,7 +50,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Name="MyWalletTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+            <TabItem Name="MyWalletTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/mywallettabbackground_t236.png"/>
@@ -61,7 +61,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Name="MarkedBooksTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
+            <TabItem Name="MarkedBooksTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/markedbookstabbackground_sb8h.png"/>
@@ -79,7 +79,7 @@
         <Button Margin="0,176,0,0" Name="SearchTabButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="SearchTabButton_Click"/>
         <Button Margin="0,224,0,0" Name="CartButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="CartButton_Click"/>
         <Button Margin="0,275,0,0" Name="MyWalletButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="MyWalletButton_Click"/>
-        <Button Margin="0,324,0,0" Name="MarkedBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
+        <Button Margin="0,324,0,0" Name="MarkedBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="MarkedBooksButton_Click"/>
         <Button Margin="0,374,0,0" Name="VIPSubscriptionButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
         <Button Margin="0,422,0,0" Name="ProfileButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
         <Button Margin="0,470,0,0" Name="LogOutButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="LogOutButton_Click"/>

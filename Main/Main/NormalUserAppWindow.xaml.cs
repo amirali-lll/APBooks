@@ -29,7 +29,7 @@ namespace Main
         {
             NormalUserAppWindow appMainWindow = new NormalUserAppWindow(CurrentUser);
             appMainWindow.CurrentUserName.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
-            appMainWindow.VIPRemainedDays.Text = (CurrentUser.VIPEndingTime.Day - CurrentUser.VIPStartingTime.Day) + " days";
+            appMainWindow.VIPRemainedDays.Text = CurrentUser.VIPStartingTime.Day - CurrentUser.VIPEndingTime().Day + "";
             appMainWindow.WallatMoneyAmount.Text = (int)CurrentUser.WalletMoney + "";
             appMainWindow.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
             appMainWindow.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
@@ -120,6 +120,11 @@ namespace Main
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             //Showing Pay Window...
+        }
+
+        private void MarkedBooksButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuTab.SelectedItem = MarkedBooksTab;
         }
     }
 }

@@ -33,7 +33,8 @@ namespace Main
 
             User1.WalletMoney = 65000;
             User1.VIPStartingTime = new DateTime(2022, 7, 1);
-            User1.VIPEndingTime = new DateTime(2022, 7, 30);
+            VIP VIP1 = new VIP(15);
+            User1.VIPSubscription = VIP1;
             InitializeComponent();
         }
 

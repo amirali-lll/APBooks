@@ -63,6 +63,7 @@
     <Compile Include="CheckRegularExpressions.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="NormalUser.cs" />
+    <Compile Include="VIP.cs" />
     <Page Include="NormalUserAppWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
