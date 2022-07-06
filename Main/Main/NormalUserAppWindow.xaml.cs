@@ -36,6 +36,9 @@ namespace Main
             appMainWindow.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
             appMainWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
             appMainWindow.WalletMoneyBox.Text = (int)CurrentUser.WalletMoney + "";
+            appMainWindow.VIPRemainedDaysBox.Text = CurrentUser.VIPEndingTime.Day - CurrentUser.VIPStartingTime.Day + "";
+            appMainWindow.VIPStartingDateBox.Text = CurrentUser.VIPStartingTime + "";
+            appMainWindow.VIPEndingDateBox.Text = CurrentUser.VIPEndingTime + "";
             appMainWindow.Show();
         }
 
@@ -125,6 +128,16 @@ namespace Main
         private void MarkedBooksButton_Click(object sender, RoutedEventArgs e)
         {
             MenuTab.SelectedItem = MarkedBooksTab;
+        }
+
+        private void VIPSubscriptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuTab.SelectedItem = VIPSubscriptionTab;
+        }
+
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuTab.SelectedItem = ProfileTab;
         }
     }
 }
