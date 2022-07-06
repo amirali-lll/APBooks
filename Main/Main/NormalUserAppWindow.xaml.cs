@@ -26,7 +26,8 @@ namespace Main
             this.CurrentUser = CurrentUser;
             InitializeComponent();
         }
-        public static void InitializeNormalUserAppMainWindow(NormalUser CurrentUser, string TabName)
+
+        public static void InitializeNormalUserAppMainWindow(NormalUser CurrentUser)
         {
             NormalUserAppWindow appMainWindow = new NormalUserAppWindow(CurrentUser);
             appMainWindow.CurrentUserName.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
@@ -40,7 +41,7 @@ namespace Main
             appMainWindow.VIPRemainedDaysBox.Text = CurrentUser.VIPEndingTime.Day - CurrentUser.VIPStartingTime.Day + "";
             appMainWindow.VIPStartingDateBox.Text = CurrentUser.VIPStartingTime + "";
             appMainWindow.VIPEndingDateBox.Text = CurrentUser.VIPEndingTime + "";
-            appMainWindow.MenuTab.SelectedItem = TabName;
+            appMainWindow.FirstAndLastNameBox.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
             appMainWindow.Show();
         }
 
@@ -108,13 +109,14 @@ namespace Main
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
             CurrentUser.cart.BuyWithWallet();
-            InitializeNormalUserAppMainWindow(CurrentUser, "CartTab");
+            InitializeNormalUserAppMainWindow(CurrentUser);
             Close();
         }
 
         private void PayButton_Click(object sender, RoutedEventArgs e)
         {
-            //Opening pay window
+            PayWindow payWindow = new PayWindow();
+            payWindow.Show();
         }
 
         private void MyWalletButton_Click(object sender, RoutedEventArgs e)
@@ -186,7 +188,7 @@ namespace Main
                     CurrentUser.Email = ChangeEmailBox.Text;
                     MessageBox.Show("Email changed successfully!");
                 }
-                InitializeNormalUserAppMainWindow(CurrentUser, "ProfileTab");
+                InitializeNormalUserAppMainWindow(CurrentUser);
                 Close();
             }
         }
@@ -212,7 +214,7 @@ namespace Main
             else
             {
                 CurrentUser.Password = NewPasswordBox.Password;
-                InitializeNormalUserAppMainWindow(CurrentUser, "ProfileTab");
+                InitializeNormalUserAppMainWindow(CurrentUser);
                 Close();
             }
         }

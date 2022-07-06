@@ -63,6 +63,9 @@
     <Compile Include="CheckRegularExpressions.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="NormalUser.cs" />
+    <Compile Include="PayWindow.xaml.cs">
+      <DependentUpon>PayWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VIP.cs" />
     <Page Include="NormalUserAppWindow.xaml">
       <SubType>Designer</SubType>
@@ -80,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PayWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

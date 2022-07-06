@@ -72,7 +72,7 @@ namespace Main
         public void InitializeAppMainWindow()
         {
             NormalUser CurrentUser = NormalUser.FindUser(LoginTabEmailBox.Text);
-            NormalUserAppWindow.InitializeNormalUserAppMainWindow(CurrentUser, "AllBooksTab");
+            NormalUserAppWindow.InitializeNormalUserAppMainWindow(CurrentUser);
         }
 
         private void LoginTabBackButton_Click(object sender, RoutedEventArgs e)
