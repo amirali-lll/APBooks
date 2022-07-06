@@ -57,6 +57,10 @@ namespace Main
             {
                 MessageBox.Show("The cart is empty!");
             }
+            else
+            {
+                PayWindow.InitializePayWindow(User.cart.CostWithDiscount(), User, PayWindow.PayRequest.Cart);
+            }
         }
         public double Cost()
         {

@@ -115,8 +115,8 @@ namespace Main
 
         private void PayButton_Click(object sender, RoutedEventArgs e)
         {
-            PayWindow payWindow = new PayWindow();
-            payWindow.Show();
+            CurrentUser.cart.ManualBuy();
+            Close();
         }
 
         private void MyWalletButton_Click(object sender, RoutedEventArgs e)
@@ -126,7 +126,27 @@ namespace Main
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            //Showing Pay Window...
+            if (AddMoneyBox.Text == "")
+            {
+                MessageBox.Show("The adding money box is empty!");
+            }
+            else if(!Regex.IsMatch(AddMoneyBox.Text, @"\d"))
+            {
+                MessageBox.Show("You should only enter digits in add money box!");
+            }
+            else if(Convert.ToInt32(AddMoneyBox.Text) < 5000)
+            {
+                MessageBox.Show("The entered money is too small!");
+            }
+            else if(Convert.ToInt32(AddMoneyBox.Text) > 500000)
+            {
+                MessageBox.Show("The entered money is too big!");
+            }
+            else
+            {
+                PayWindow.InitializePayWindow(Convert.ToInt32(AddMoneyBox.Text), CurrentUser, PayWindow.PayRequest.Cart);
+                Close();
+            }
         }
 
         private void MarkedBooksButton_Click(object sender, RoutedEventArgs e)

@@ -8,7 +8,13 @@
         Title="PayWindow" Height="550" Width="550" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="https://s6.uupload.ir/files/paywindow_yx2y.png"/>
+            <ImageBrush ImageSource="https://s6.uupload.ir/files/paywindow_jtcp.png"/>
         </Grid.Background>
+        <TextBlock x:Name="ToBePaidPriceBox" Height="50" Width="220" Margin="200,95,130,370" Foreground="#FF1F4E79" FontSize="36" TextAlignment="Center" FontWeight="Bold"/>
+        <TextBox x:Name="CardNumberBox" Text="" Height="36" Width="320" Margin="0,10,5,38" FontSize="22" Foreground="#FF1F4E79" Background="Transparent" BorderBrush ="Transparent"/>
+        <TextBox x:Name="CVV2Box" Text="" Height="35" Width="110" Margin="0,140,215,10" Background="Transparent" BorderBrush="Transparent" Foreground="#FF1F4E79" FontSize="22"/>
+        <TextBox x:Name="YearBox" Height="35" Width="40" Margin="80,140,0,10" Background="Transparent" BorderBrush="Transparent" Foreground="#FF1F4E79" FontSize="22"/>
+        <TextBox x:Name="MonthBox" Height="35" Width="40" Margin="298,140,0,10" Background="Transparent" BorderBrush="Transparent" Foreground="#FF1F4E79" FontSize="22"></TextBox>
+        <Button x:Name="PayButton" Margin="131,377,129,76" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="PayButton_Click"/>
     </Grid>
 </Window>
