@@ -74,7 +74,7 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/vipsubscriptiontabbackground_lxu3.png"/>
                     </Grid.Background>
-                    <TextBlock x:Name="VIPRemainedDaysBox" Text="1" Margin="391,107,690,505" FontSize="38" TextAlignment="Center" Foreground="#FFCCB672"/>
+                    <TextBlock x:Name="VIPRemainedDaysBox" Text="" Margin="391,107,690,505" FontSize="38" TextAlignment="Center" Foreground="#FFCCB672"/>
                     <TextBlock x:Name="VIPStartingDateBox" Text="" Margin="650,100,0,510" Height="40" Width="300" TextAlignment="Left" FontSize="18" Foreground="#FF86774B"/>
                     <TextBlock x:Name="VIPEndingDateBox" Text="" Margin="650,100,0,440" Height="40" Width="300" TextAlignment="Left" FontSize="18" Foreground="#FF86774B"/>
                 </Grid>
@@ -83,8 +83,17 @@
             <TabItem Name="ProfileTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
                 <Grid>
                     <Grid.Background>
-                        <ImageBrush ImageSource="https://s6.uupload.ir/files/profiletabbackground_x4y5.png"/>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/profiletabbackground_rf0x.png"/>
                     </Grid.Background>
+                    <TextBlock x:Name="FirstAndLastNameBox" Text="" Margin="391,107,500,505" FontSize="26" Height="50" Width="240" TextAlignment="Left" Foreground="White"/>
+                    <TextBox x:Name="ChangeFirstNameBox" Text="" Height="20" Width="160" Margin="-110,-150,10,15" BorderBrush="Transparent" FontSize="14" TextAlignment="Left"/>
+                    <TextBox x:Name="ChangeLastNameBox" Text="" Height="20" Width="160" Margin="520,-150,25,15" BorderBrush="Transparent" FontSize="14" TextAlignment="Left"/>
+                    <TextBox x:Name="ChangeEmailBox" Text="" Height="20" Width="230" Margin="-90,-41,10,10" BorderBrush="Transparent" FontSize="14" TextAlignment="Left"/>
+                    <TextBox x:Name="ChangePhoneNumberBox" Text="" Height="20" Width="230" Margin="720,-35,20,15" BorderBrush="Transparent" FontSize="14" TextAlignment="Left"/>
+                    <PasswordBox x:Name="CurrentPasswordBox" Password="" Height="20" Width="190" Margin="0,355,30,15" BorderBrush="Transparent" FontSize="14"/>
+                    <PasswordBox x:Name="NewPasswordBox" Password="" Height="20" Width="190" Margin="775,355,45,15" BorderBrush="Transparent" FontSize="14"/>
+                    <Button x:Name="ChangeButton1" Height="60" Width="120" Background="Transparent" Margin="245,80,0,0" Opacity="0.2" Cursor="Hand" BorderBrush="Transparent" Click="ChangeButton1_Click"/>
+                    <Button x:Name="ChangeButton2" Height="60" Width="120" Background="Transparent" Margin="245,486,0,0" Opacity="0.2" Cursor="Hand" BorderBrush="Transparent" Click="ChangeButton2_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>

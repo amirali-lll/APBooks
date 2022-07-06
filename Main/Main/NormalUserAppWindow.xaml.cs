@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace Main
 {
@@ -25,7 +26,7 @@ namespace Main
             this.CurrentUser = CurrentUser;
             InitializeComponent();
         }
-        public static void InitializeNormalUserAppMainWindow(NormalUser CurrentUser)
+        public static void InitializeNormalUserAppMainWindow(NormalUser CurrentUser, string TabName)
         {
             NormalUserAppWindow appMainWindow = new NormalUserAppWindow(CurrentUser);
             appMainWindow.CurrentUserName.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
@@ -39,6 +40,7 @@ namespace Main
             appMainWindow.VIPRemainedDaysBox.Text = CurrentUser.VIPEndingTime.Day - CurrentUser.VIPStartingTime.Day + "";
             appMainWindow.VIPStartingDateBox.Text = CurrentUser.VIPStartingTime + "";
             appMainWindow.VIPEndingDateBox.Text = CurrentUser.VIPEndingTime + "";
+            appMainWindow.MenuTab.SelectedItem = TabName;
             appMainWindow.Show();
         }
 
@@ -106,7 +108,7 @@ namespace Main
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
             CurrentUser.cart.BuyWithWallet();
-            InitializeNormalUserAppMainWindow(CurrentUser);
+            InitializeNormalUserAppMainWindow(CurrentUser, "CartTab");
             Close();
         }
 
@@ -138,6 +140,81 @@ namespace Main
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
             MenuTab.SelectedItem = ProfileTab;
+        }
+
+        private void ChangeButton1_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Regex.IsMatch(ChangeFirstNameBox.Text, @"^(\w){3,32}$") && ChangeFirstNameBox.Text != "")
+            {
+                MessageBox.Show("The entered first name is not in the correct format!");
+            }
+            else if (!Regex.IsMatch(ChangeLastNameBox.Text, @"^(\w){3,32}$") && ChangeLastNameBox.Text != "")
+            {
+                MessageBox.Show("The entered name is not in the correct format!");
+            }
+            else if (!Regex.IsMatch(ChangePhoneNumberBox.Text, @"^09(\d){9}$") && ChangePhoneNumberBox.Text != "")
+            {
+                MessageBox.Show("The phone number is not in the correct format!");
+            }
+            else if (!CheckRegularExpressions.CheckEmailCorrection(ChangeEmailBox.Text) && ChangeEmailBox.Text != "")
+            {
+                MessageBox.Show("The entered email is not in the correct format!");
+            }
+            else if (NormalUser.AllEmails.Contains(ChangeEmailBox.Text) && ChangeEmailBox.Text != CurrentUser.Email && ChangeEmailBox.Text != "")
+            {
+                MessageBox.Show("This email has been used before! Try another one.");
+            }
+            else
+            {
+                if(ChangeFirstNameBox.Text != "")
+                {
+                    CurrentUser.FirstName = ChangeFirstNameBox.Text;
+                    MessageBox.Show("First name changed successfully!");
+                }
+                if(ChangeLastNameBox.Text != "")
+                {
+                    CurrentUser.LastName = ChangeLastNameBox.Text;
+                    MessageBox.Show("Last name changed successfully!");
+                }
+                if(ChangePhoneNumberBox.Text != "")
+                {
+                    CurrentUser.PhoneNumber = ChangePhoneNumberBox.Text;
+                    MessageBox.Show("Phone number changed successfully!");
+                }
+                if(ChangeEmailBox.Text != "")
+                {
+                    CurrentUser.Email = ChangeEmailBox.Text;
+                    MessageBox.Show("Email changed successfully!");
+                }
+                InitializeNormalUserAppMainWindow(CurrentUser, "ProfileTab");
+                Close();
+            }
+        }
+
+        private void ChangeButton2_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentPasswordBox.Password == "")
+            {
+                MessageBox.Show("Current password box could not be empty!");
+            }
+            else if(CurrentPasswordBox.Password != CurrentUser.Password)
+            {
+                MessageBox.Show("Entered current password is not correct!");
+            }
+            else if(NewPasswordBox.Password == "")
+            {
+                MessageBox.Show("New password box could not be empty!");
+            }
+            else if (!(Regex.IsMatch(NewPasswordBox.Password, @"[a-z]{1,}") && Regex.IsMatch(NewPasswordBox.Password, @"[A-Z]{1,}") && NewPasswordBox.Password.Length >= 3 && NewPasswordBox.Password.Length <= 40))
+            {
+                MessageBox.Show("The entered new password is not in the correct format!");
+            }
+            else
+            {
+                CurrentUser.Password = NewPasswordBox.Password;
+                InitializeNormalUserAppMainWindow(CurrentUser, "ProfileTab");
+                Close();
+            }
         }
     }
 }
