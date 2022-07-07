@@ -13,16 +13,25 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/user_mainappwindow_allbookstabbackground_ad60.png"/>
                     </Grid.Background>
-                    <Grid x:Name="BookItems" Height="580" Width="900" Margin="290,70,0,0" Background="AliceBlue">
-                        <ItemsControl ItemsSource="{Binding}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid x:Name="BookTemplate" Height="260" Width="180" Margin="20,20,20,20" Background="#FFF2F2F2" >
-                                        <Image x:Name="CoverImage" Height="200" Width="140" Margin="0,0,0,30" Source="{Binding imageSource}"/>
-                                    </Grid>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
+                    <Grid x:Name="BookItems" Height="540" Width="880" Margin="290,70,0,10" Background="Transparent">
+                        <ScrollViewer>
+                            <ItemsControl ItemsSource="{Binding}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <UniformGrid Columns="4" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid x:Name="BookTemplate" Height="260" Width="180" Margin="5,10,10,5" Background="#FFF2F2F2" >
+                                            <Image x:Name="CoverImage" Height="200" Width="140" Margin="0,0,0,30" Source="{Binding imageSource}"/>
+                                            <TextBlock x:Name="CostWithDiscountBox" Text="{Binding costWithDiscount}" Height="40" Width="140" Margin="62,225,0,0" Background="Transparent" FontSize="20" Foreground="Black" FontWeight="Bold"/>
+                                            <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
                     </Grid>
                 </Grid>
             </TabItem>

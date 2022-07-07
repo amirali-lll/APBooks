@@ -60,6 +60,7 @@ namespace Main
 
         private void MyLibraryButton_Click(object sender, RoutedEventArgs e)
         {
+            DataContext = CurrentUser.BoughtBooks;
             MenuTab.SelectedItem = MyLibraryTab;
         }
 

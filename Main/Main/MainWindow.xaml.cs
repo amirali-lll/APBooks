@@ -27,7 +27,17 @@ namespace Main
         public MainWindow()
         {
             //This lines will be deleted after assigning data base:
-            Book book1 = new Book(1, "The Alchemist", "Pauolo Coelho", 136, 55000, 20, "It is a description...", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
+            Book book1 = new Book(1, "The Alchemist", "Pauolo Coelho", 136, 55000, 20, "It is a description...", "https://s6.uupload.ir/files/the_alchemist_na3u.jpg");
+            Book book2 = new Book(2, "Theusdays with Morrie", "Mitch Albom", 340, 60000, 30, "It is a description", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
+            Book book3 = new Book(2, "Theusdays with Morrie", "Mitch Albom", 340, 60000, 30, "It is a description", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
+            Book book4 = new Book(2, "Theusdays with Morrie", "Mitch Albom", 340, 60000, 30, "It is a description", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
+            Book book5 = new Book(2, "Theusdays with Morrie", "Mitch Albom", 340, 60000, 30, "It is a description", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
+            Book book6 = new Book(2, "Theusdays with Morrie", "Mitch Albom", 340, 60000, 30, "It is a description", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
+            Book book7 = new Book(2, "Theusdays with Morrie", "Mitch Albom", 340, 60000, 30, "It is a description", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
+            Book book8 = new Book(2, "Theusdays with Morrie", "Mitch Albom", 340, 60000, 30, "It is a description", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
+            Book book9 = new Book(2, "Theusdays with Morrie", "Mitch Albom", 340, 60000, 30, "It is a description", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
+            Book book10 = new Book(2, "Theusdays with Morrie", "Mitch Albom", 340, 60000, 30, "It is a description", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
+            Book book11 = new Book(2, "Theusdays with Morrie", "Mitch Albom", 340, 60000, 30, "It is a description", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
             NormalUser User1 = new NormalUser("Current", "User", "a@b.com", "09123456789", "AAAAaaaa");
             User1.cart.Add(book1);
 

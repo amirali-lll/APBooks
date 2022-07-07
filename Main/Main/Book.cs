@@ -20,6 +20,7 @@ namespace Main
         public int DiscountPercentage { get; set; }
         public int NumberOfSells { get; set; } = 0;
         public ImageSource imageSource { get; set; }
+        public double costWithDiscount { get; set; }
 
         //Consructor:
         public Book(int id, string Name, string AuthorName, int NumberOfPages, int Cost, int DiscountPercentage, string Description, string ImageSource)
@@ -34,6 +35,7 @@ namespace Main
             Uri uri = new Uri(ImageSource, UriKind.Absolute);
             ImageSource BookImgSource = new BitmapImage(uri);
             this.imageSource = BookImgSource;
+            this.costWithDiscount = CostWithDiscount();
             AllBooks.Add(this);
         }
 
