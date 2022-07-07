@@ -27,7 +27,7 @@ namespace Main
         public MainWindow()
         {
             //This lines will be deleted after assigning data base:
-            Book book1 = new Book(1, "The Alchemist", "Pauolo Coelho", 136, 55000, 20, "");
+            Book book1 = new Book(1, "The Alchemist", "Pauolo Coelho", 136, 55000, 20, "It is a description...", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
             NormalUser User1 = new NormalUser("Current", "User", "a@b.com", "09123456789", "AAAAaaaa");
             User1.cart.Add(book1);
 
@@ -62,17 +62,16 @@ namespace Main
                     MessageBox.Show("Welcome " + LoginTabEmailBox.Text + " !");
                     if(WichType == MOrU.normaluser)
                     {
-                        InitializeAppMainWindow();
+                        NormalUser CurrentUser = NormalUser.FindUser(LoginTabEmailBox.Text);
+                        NormalUserAppWindow.InitializeNormalUserAppMainWindow(CurrentUser);
+                    }
+                    else
+                    {
+
                     }
                     Close();
                 }
             }
-        }
-
-        public void InitializeAppMainWindow()
-        {
-            NormalUser CurrentUser = NormalUser.FindUser(LoginTabEmailBox.Text);
-            NormalUserAppWindow.InitializeNormalUserAppMainWindow(CurrentUser);
         }
 
         private void LoginTabBackButton_Click(object sender, RoutedEventArgs e)

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Main
 {
@@ -17,9 +19,10 @@ namespace Main
         public double Cost { get; set; }
         public int DiscountPercentage { get; set; }
         public int NumberOfSells { get; set; } = 0;
+        public ImageSource imageSource { get; set; }
 
         //Consructor:
-        public Book(int id, string Name, string AuthorName, int NumberOfPages, int Cost, int DiscountPercentage, string Description)
+        public Book(int id, string Name, string AuthorName, int NumberOfPages, int Cost, int DiscountPercentage, string Description, string ImageSource)
         {
             this.id = id;
             this.Name = Name;
@@ -28,6 +31,9 @@ namespace Main
             this.Cost = Cost;
             this.DiscountPercentage = DiscountPercentage;
             this.Description = Description;
+            Uri uri = new Uri(ImageSource, UriKind.Absolute);
+            ImageSource BookImgSource = new BitmapImage(uri);
+            this.imageSource = BookImgSource;
             AllBooks.Add(this);
         }
 

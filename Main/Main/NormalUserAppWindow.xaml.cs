@@ -25,6 +25,7 @@ namespace Main
         {
             this.CurrentUser = CurrentUser;
             InitializeComponent();
+            DataContext = Book.AllBooks;
         }
 
         public static void InitializeNormalUserAppMainWindow(NormalUser CurrentUser)
