@@ -31,7 +31,7 @@ namespace Main
         {
             NormalUserAppWindow appMainWindow = new NormalUserAppWindow(CurrentUser);
             appMainWindow.CurrentUserName.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
-            appMainWindow.VIPRemainedDays.Text = CurrentUser.VIPEndingTime.Day - CurrentUser.VIPStartingTime.Day + "";
+            appMainWindow.VIPRemainedDays.Text = CurrentUser.VIPEndingTime.Day - DateTime.Now.Day + "";
             appMainWindow.WallatMoneyAmount.Text = (int)CurrentUser.WalletMoney + "";
             appMainWindow.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
             appMainWindow.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
@@ -150,7 +150,7 @@ namespace Main
             }
             else
             {
-                PayWindow.InitializePayWindow(Convert.ToInt32(AddMoneyBox.Text), CurrentUser, PayWindow.PayRequest.Cart, this);
+                PayWindow.InitializePayWindow(Convert.ToInt32(AddMoneyBox.Text), CurrentUser, PayWindow.PayRequest.Wallet, this);
             }
         }
 
