@@ -39,7 +39,7 @@ namespace Main
             appMainWindow.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
             appMainWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
             appMainWindow.WalletMoneyBox.Text = (int)CurrentUser.WalletMoney + "";
-            appMainWindow.VIPRemainedDaysBox.Text = CurrentUser.VIPEndingTime.Day - CurrentUser.VIPStartingTime.Day + "";
+            appMainWindow.VIPRemainedDaysBox.Text = CurrentUser.VIPEndingTime.Day - DateTime.Now.Day + "";
             appMainWindow.VIPStartingDateBox.Text = CurrentUser.VIPStartingTime + "";
             appMainWindow.VIPEndingDateBox.Text = CurrentUser.VIPEndingTime + "";
             appMainWindow.FirstAndLastNameBox.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
