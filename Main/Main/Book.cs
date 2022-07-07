@@ -18,12 +18,15 @@ namespace Main
         public string Description { get; set; }
         public double Cost { get; set; }
         public int DiscountPercentage { get; set; }
+        public string DiscountPercentageText { get; set; }
         public int NumberOfSells { get; set; } = 0;
-        public ImageSource imageSource { get; set; }
+        public ImageSource CoverSource { get; set; }
         public double costWithDiscount { get; set; }
+        public bool IsVIP { get; set; }
+        public ImageSource VIPImageSource { get; set; }
 
         //Consructor:
-        public Book(int id, string Name, string AuthorName, int NumberOfPages, int Cost, int DiscountPercentage, string Description, string ImageSource)
+        public Book(int id, string Name, string AuthorName, int NumberOfPages, int Cost, int DiscountPercentage, string Description, string CoverSource, bool IsVIP)
         {
             this.id = id;
             this.Name = Name;
@@ -32,10 +35,18 @@ namespace Main
             this.Cost = Cost;
             this.DiscountPercentage = DiscountPercentage;
             this.Description = Description;
-            Uri uri = new Uri(ImageSource, UriKind.Absolute);
+            Uri uri = new Uri(CoverSource, UriKind.Absolute);
             ImageSource BookImgSource = new BitmapImage(uri);
-            this.imageSource = BookImgSource;
+            this.CoverSource = BookImgSource;
             this.costWithDiscount = CostWithDiscount();
+            this.IsVIP = IsVIP;
+            DiscountPercentageText = DiscountPercentage + "%";
+            if (IsVIP)
+            {
+                Uri uri2 = new Uri("https://s6.uupload.ir/files/vipstar_g9d.png", UriKind.Absolute);
+                ImageSource VIPImgSource = new BitmapImage(uri2);
+                this.VIPImageSource = VIPImgSource;
+            }
             AllBooks.Add(this);
         }
 
