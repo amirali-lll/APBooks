@@ -115,8 +115,12 @@ namespace Main
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
             CurrentUser.cart.BuyWithWallet();
-            InitializeNormalUserAppMainWindow(CurrentUser);
-            Close();
+            this.WallatMoneyAmount.Text = (int)CurrentUser.WalletMoney + "";
+            this.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
+            this.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
+            this.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
+            this.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
+            this.WalletMoneyBox.Text = (int)CurrentUser.WalletMoney + "";
         }
 
         private void PayButton_Click(object sender, RoutedEventArgs e)
@@ -252,7 +256,24 @@ namespace Main
 
         private void TrashButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            Button button = sender as Button;
+            Book b = button.DataContext as Book;
+            CurrentUser.cart.Delete(b);
+            this.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
+            this.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
+            this.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
+            this.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
+        }
+
+        private void AddToCartButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            Book b = button.DataContext as Book;
+            CurrentUser.cart.Add(b);
+            this.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
+            this.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
+            this.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
+            this.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
         }
     }
 }

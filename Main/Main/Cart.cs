@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Collections.ObjectModel;
 
 namespace Main
 {
@@ -14,12 +15,20 @@ namespace Main
         {
             this.User = User;
         }
-        public List<Book> CartBooks { get; set; } = new List<Book>();
+        public ObservableCollection<Book> CartBooks { get; set; } = new ObservableCollection<Book>();
         public void Add(Book book)
         {
             if (!CartBooks.Contains(book))
             {
-                CartBooks.Add(book);
+                if (!User.BoughtBooks.Contains(book))
+                {
+                    CartBooks.Add(book);
+                    MessageBox.Show("Book added to your cart!");
+                }
+                else
+                {
+                    MessageBox.Show("You have already bought this book!");
+                }
             }
             else
             {

@@ -5,24 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Collections.ObjectModel;
 
 namespace Main
 {
     public class Book
     {
         //Properties:
-        public int id { get; set; }
-        public string Name { get; set; }
-        public string AuthorName { get; set; }
-        public int NumberOfPages { get; set; }
-        public string Description { get; set; }
-        public double Cost { get; set; }
-        public int DiscountPercentage { get; set; }
-        public string DiscountPercentageText { get; set; }
-        public int NumberOfSells { get; set; } = 0;
-        public ImageSource CoverSource { get; set; }
-        public double costWithDiscount { get; set; }
-        public bool IsVIP { get; set; }
+        public int id { get; set; } 
+        public string Name { get; set; } 
+        public string AuthorName { get; set; } 
+        public int NumberOfPages { get; set; } 
+        public string Description { get; set; } 
+        public double Cost { get; set; } 
+        public int DiscountPercentage { get; set; } 
+        public string DiscountPercentageText { get; set; } //not in db
+        public int NumberOfSells { get; set; } = 0; //not in db
+        public ImageSource CoverSource { get; set; } //db as string
+        public double costWithDiscount { get; set; } //not in db
+        public bool IsVIP { get; set; } //not in db
         public ImageSource VIPImageSource { get; set; }
 
         //Consructor:
@@ -68,5 +69,7 @@ namespace Main
         //Static Collections:
         public static List<Book> AllBooks { get; set; } = new List<Book>();
         public static List<int> Rates { get; set; } = new List<int> { };
+
+        //Static Methods:
     }
 }

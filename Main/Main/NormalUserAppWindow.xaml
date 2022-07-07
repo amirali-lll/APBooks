@@ -13,7 +13,7 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/user_mainappwindow_allbookstabbackground_ad60.png"/>
                     </Grid.Background>
-                    <Grid x:Name="BookItems" Height="540" Width="880" Margin="290,70,0,10" Background="Transparent">
+                    <Grid x:Name="AllBookItems" Height="540" Width="880" Margin="290,70,0,10" Background="Transparent">
                         <ScrollViewer>
                             <ItemsControl ItemsSource="{Binding}">
                                 <ItemsControl.ItemsPanel>
@@ -28,7 +28,9 @@
                                             <Image x:Name="VIPStar" Height="25" Width="25" Source="{Binding VIPImageSource}" Margin="0,0,145,225"/>
                                             <TextBlock x:Name="CostWithDiscountBox" Text="{Binding costWithDiscount}" Height="40" Width="140" Margin="62,225,0,0" Background="Transparent" FontSize="20" Foreground="Black" FontWeight="Bold"/>
                                             <TextBlock x:Name="DiscountBox" Text="{Binding DiscountPercentageText}" Height="25" Width="36" Margin="120,215,0,0" FontSize="16" Background="OrangeRed" Foreground="White" TextAlignment="Center"/>
+                                            <Image Name="AddToCart" Height="40" Width="40" Opacity="0.6" Source="https://s6.uupload.ir/files/addtocart_3vcf.png" Margin="0,210,115,0"/>
                                             <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand"/>
+                                            <Button Name="AddToCartButton" Height="40" Width="40" Opacity="0.4" Margin="0,210,115,0" Cursor="Hand" Background="Transparent" Click="AddToCartButton_Click"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -85,8 +87,8 @@
                                         <Grid x:Name="BookTemplate" Height="260" Width="180" Margin="5,10,10,5" Background="#FFF2F2F2" >
                                             <Image x:Name="CoverImage" Height="200" Width="140" Margin="0,0,0,30" Source="{Binding CoverSource}"/>
                                             <Image x:Name="VIPStar" Height="25" Width="25" Source="{Binding VIPImageSource}" Margin="0,0,145,225"/>
-                                            <TextBlock x:Name="CostWithDiscountBox" Text="{Binding costWithDiscount}" Height="40" Width="140" Margin="62,225,0,0" Background="Transparent" FontSize="20" Foreground="Black" FontWeight="Bold"/>
-                                            <TextBlock x:Name="DiscountBox" Text="{Binding DiscountPercentageText}" Height="25" Width="36" Margin="120,215,0,0" FontSize="16" Background="OrangeRed" Foreground="White" TextAlignment="Center"/>
+                                            <TextBlock x:Name="BookName" Text="{Binding Name}" Height="30" Width="120" Margin="5,215,0,0" FontSize="10" Foreground="black" TextAlignment="Center" FontWeight="bold"/>
+                                            <TextBlock x:Name="AuthorName" Text="{Binding AuthorName}" Height="30" Width="120" Margin="5,240,0,0" FontSize="8" Foreground="black" TextAlignment="Center"/>
                                             <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand"/>
                                         </Grid>
                                     </DataTemplate>
@@ -124,7 +126,7 @@
                                             <TextBlock x:Name="DiscountBox" Text="{Binding DiscountPercentageText}" Height="25" Width="36" Margin="120,215,0,0" FontSize="16" Background="OrangeRed" Foreground="White" TextAlignment="Center"/>
                                             <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand"/>
                                             <Image x:Name="Trash" Height="50" Width="35" Source="https://s6.uupload.ir/files/trash_qc7d.png" Margin="0,210,125,0" Opacity="0.5"/>
-                                            <Button x:Name="TrashButton" Height="50" Width="35" Background="Transparent" Margin="0,210,125,0" Opacity="0.2" Cursor="Hand" Click="TrashButton_Click"/>
+                                            <Button x:Name="TrashButton" Height="50" Width="35" Background="Transparent" BorderBrush="Transparent" Margin="0,210,125,0" Opacity="0.2" Cursor="Hand" Click="TrashButton_Click"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
