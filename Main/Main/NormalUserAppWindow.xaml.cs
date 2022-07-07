@@ -55,6 +55,7 @@ namespace Main
 
         private void AllBooksButton_Click(object sender, RoutedEventArgs e)
         {
+            DataContext = Book.AllBooks;
             MenuTab.SelectedItem = AllBooksTab;
         }
 
@@ -66,6 +67,7 @@ namespace Main
 
         private void SearchTabButton_Click(object sender, RoutedEventArgs e)
         {
+            DataContext = Book.AllBooks;
             MenuTab.SelectedItem = SearchTab;
         }
 
@@ -88,6 +90,7 @@ namespace Main
             {
                 MessageBox.Show("No books found with such properties...!");
             }
+            DataContext = ToBeShown;
         }
 
         public static List<string> AllSubstrings(string str)
@@ -105,6 +108,7 @@ namespace Main
 
         private void CartButton_Click(object sender, RoutedEventArgs e)
         {
+            DataContext = CurrentUser.cart.CartBooks;
             MenuTab.SelectedItem = CartTab;
         }
 
@@ -244,6 +248,11 @@ namespace Main
                 InitializeNormalUserAppMainWindow(CurrentUser);
                 Close();
             }
+        }
+
+        private void TrashButton_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
