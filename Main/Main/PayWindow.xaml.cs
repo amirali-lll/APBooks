@@ -23,16 +23,18 @@ namespace Main
         public enum PayRequest { Cart, Wallet}
         public PayRequest Request { get; set;}
         public NormalUser CurrentUser;
-        public PayWindow(NormalUser CurrentUser, PayRequest Request)
+        public NormalUserAppWindow BackWindow;
+        public PayWindow(NormalUser CurrentUser, PayRequest Request, NormalUserAppWindow BackWindow)
         {
+            this.BackWindow = BackWindow;
             this.CurrentUser = CurrentUser;
             this.Request = Request;
             InitializeComponent();
         }
 
-        public static void InitializePayWindow(double Price, NormalUser CurrentUser, PayRequest Request)
+        public static void InitializePayWindow(double Price, NormalUser CurrentUser, PayRequest Request, NormalUserAppWindow BackWindow)
         {
-            PayWindow window = new PayWindow(CurrentUser, Request);
+            PayWindow window = new PayWindow(CurrentUser, Request, BackWindow);
             window.ToBePaidPriceBox.Text = (int)Price + "";
             window.Show();
         }
@@ -46,18 +48,20 @@ namespace Main
                     MessageBox.Show("You paid " + ToBePaidPriceBox.Text + " Toman successfully!");
                     if(Request == PayRequest.Cart)
                     {
-                        CurrentUser.cart.ManualBuy();
                         CurrentUser.cart.CartBooks.Clear();
                         MessageBox.Show("Books bought successfully!");
+                        BackWindow.Close();
+                        NormalUserAppWindow.InitializeNormalUserAppMainWindow(CurrentUser);
                         Close();
                     }
                     else
                     {
                         CurrentUser.WalletMoney = CurrentUser.WalletMoney + Convert.ToInt32(ToBePaidPriceBox.Text);
                         MessageBox.Show("Wallet charged successfully!");
+                        BackWindow.Close();
+                        NormalUserAppWindow.InitializeNormalUserAppMainWindow(CurrentUser);
                         Close();
                     }
-                    NormalUserAppWindow.InitializeNormalUserAppMainWindow(CurrentUser);
                 }
             }
         }
@@ -67,7 +71,7 @@ namespace Main
             bool ToBeReturned = false;
             if (CVV2Box.Text == "")
             {
-                MessageBox.Show("The year box could not remain empty!");
+                MessageBox.Show("The CVV2 box could not remain empty!");
             }
             else if (!Regex.IsMatch(CVV2Box.Text, @"\d"))
             {

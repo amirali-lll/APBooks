@@ -115,8 +115,14 @@ namespace Main
 
         private void PayButton_Click(object sender, RoutedEventArgs e)
         {
-            CurrentUser.cart.ManualBuy();
-            Close();
+            if (CurrentUser.cart.CartBooks.Count == 0)
+            {
+                MessageBox.Show("The cart is empty!");
+            }
+            else
+            {
+                PayWindow.InitializePayWindow(CurrentUser.cart.CostWithDiscount(), CurrentUser, PayWindow.PayRequest.Cart, this);
+            }
         }
 
         private void MyWalletButton_Click(object sender, RoutedEventArgs e)
@@ -144,8 +150,7 @@ namespace Main
             }
             else
             {
-                PayWindow.InitializePayWindow(Convert.ToInt32(AddMoneyBox.Text), CurrentUser, PayWindow.PayRequest.Cart);
-                Close();
+                PayWindow.InitializePayWindow(Convert.ToInt32(AddMoneyBox.Text), CurrentUser, PayWindow.PayRequest.Cart, this);
             }
         }
 

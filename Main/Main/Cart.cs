@@ -51,17 +51,6 @@ namespace Main
                 MessageBox.Show("Books bought successfully!");
             }
         }
-        public void ManualBuy()
-        {
-            if (CartBooks.Count == 0)
-            {
-                MessageBox.Show("The cart is empty!");
-            }
-            else
-            {
-                PayWindow.InitializePayWindow(User.cart.CostWithDiscount(), User, PayWindow.PayRequest.Cart);
-            }
-        }
         public double Cost()
         {
             double sum = 0;
