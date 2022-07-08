@@ -8,6 +8,17 @@ namespace Main
 {
     public class VIP
     {
+        public VIP(DateTime vIPStartingTime, DateTime vIPEndingTime)
+        {
+            VIPStartingTime = vIPStartingTime;
+            VIPEndingTime = vIPEndingTime;
+        }
+
+        public VIP()
+        {
+            //fill this 
+        }
+
         public DateTime VIPStartingTime { get; set; }
         public DateTime VIPEndingTime { get; set; }
         public static int VIPDuration { get; set; }

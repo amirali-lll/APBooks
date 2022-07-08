@@ -25,6 +25,7 @@ namespace Main
         public double costWithDiscount { get; set; } //not in db
         public bool IsVIP { get; set; }
         public ImageSource VIPImageSource { get; set; } //not in db
+        public List<Rate> Rates { get; set; } = new List<Rate>();
 
         //Consructor:
         public Book(int id, string Name, string AuthorName, int NumberOfPages, int Cost, int DiscountPercentage, string Description, string CoverSource, bool IsVIP)
@@ -87,6 +88,5 @@ namespace Main
 
         //Static Collections:
         public static List<Book> AllBooks { get; set; } = new List<Book>();
-        public static List<Rate> Rates { get; set; } = new List<Rate> { };
     }
 }
