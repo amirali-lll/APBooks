@@ -10,7 +10,12 @@ namespace Main
     {
         public DateTime VIPStartingTime { get; set; }
         public DateTime VIPEndingTime { get; set; }
-        public static int VIPDuration { get; set; }
-        public static double VIPCost { get; set; }
+        public static int VIPDuration { get; set; } = 20;
+        public static double VIPCost { get; set; } = 80000;
+        public VIP()
+        {
+            VIPStartingTime = DateTime.Now;
+            VIPEndingTime = VIPStartingTime.AddDays(VIPDuration);
+        }
     }
 }

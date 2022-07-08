@@ -203,7 +203,7 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/viptabbackground(hasvip)_h5l7.png"/>
                     </Grid.Background>
-                    <TextBlock x:Name="VIPRemainedDaysBox" Text="" Margin="460,107,690,505" FontSize="38" TextAlignment="Center" Foreground="#FFCCB672"/>
+                    <TextBlock x:Name="VIPRemainedDaysBox" Text="20" Height="50" Width="80" Margin="430,107,690,505" FontSize="38" TextAlignment="Center" Foreground="#FFCCB672"/>
                     <TextBlock x:Name="VIPStartingDateBox" Text="" Margin="690,100,0,510" Height="40" Width="300" TextAlignment="Left" FontSize="18" Foreground="#FF86774B"/>
                     <TextBlock x:Name="VIPEndingDateBox" Text="" Margin="690,100,0,440" Height="40" Width="300" TextAlignment="Left" FontSize="18" Foreground="#FF86774B"/>
                 </Grid>
