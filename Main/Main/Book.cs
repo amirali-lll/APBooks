@@ -59,17 +59,15 @@ namespace Main
         public double AverageRate()
         {
             double sum = 0;
-            foreach (int i in Rates)
+            foreach(Rate rate in Rates)
             {
-                sum = sum + i;
+                sum = sum + rate.Amount;
             }
-            return sum / Rates.Count;
+            return sum/ Rates.Count;
         }
 
         //Static Collections:
         public static List<Book> AllBooks { get; set; } = new List<Book>();
-        public static List<int> Rates { get; set; } = new List<int> { };
-
-        //Static Methods:
+        public static List<Rate> Rates { get; set; } = new List<Rate> { };
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Main
 {
-    class Rate
+    public class Rate
     {
         int amount;
         public int Amount
