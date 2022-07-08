@@ -32,7 +32,7 @@ namespace Main
             BookInfoWindow bookInfoWindow = new BookInfoWindow(CurrentUser, book);
             if (CurrentUser.BoughtBooks.Contains(book))
             {
-                Uri uri1 = new Uri("https://s6.uupload.ir/files/book_info_page(bought)_4h5p.png", UriKind.Absolute);
+                Uri uri1 = new Uri("https://s6.uupload.ir/files/book_info_page(bought)_3vqv.png", UriKind.Absolute);
                 ImageSource BookImgSource = new BitmapImage(uri1);
                 bookInfoWindow.BackgroundImage.ImageSource = BookImgSource;
             }
@@ -41,6 +41,7 @@ namespace Main
             bookInfoWindow.AuthorNameBox.Text = book.AuthorName;
             bookInfoWindow.NumberOfPagesBox.Text = book.NumberOfPages + "";
             bookInfoWindow.DescriptionBox.Text = book.Description;
+            bookInfoWindow.VIPImage.Source = book.VIPImageSource;
             bookInfoWindow.Show();
         }
     }

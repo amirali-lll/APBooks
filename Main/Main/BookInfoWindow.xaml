@@ -8,13 +8,15 @@
         Title="BookInfoWindow" Height="480" Width="813" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
-            <ImageBrush x:Name="BackgroundImage" ImageSource="https://s6.uupload.ir/files/book_info_page(not_bought)_pw14.png"/>
+            <ImageBrush x:Name="BackgroundImage" ImageSource="https://s6.uupload.ir/files/book_info_page(not_bought)_vmeu.png"/>
         </Grid.Background>
 
         <Image x:Name="BookCover" Margin="86,86,547,147"/>
-        <TextBlock x:Name="BookNameBox" Margin="74,337,534,73" TextAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"/>
-        <TextBlock x:Name="AuthorNameBox" Margin="386,77,254,354" TextAlignment="Center" FontSize="11" FontWeight="Bold" Foreground="White"/>
-        <TextBlock x:Name="NumberOfPagesBox" Margin="386,122,362,309" TextAlignment="Center" FontSize="11" FontWeight="Bold" Foreground="White"/>
+        <TextBlock x:Name="BookNameBox" Margin="74,339,534,71" TextAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"/>
+        <TextBlock x:Name="AuthorNameBox" Margin="386,84,254,347" TextAlignment="Center" FontSize="11" FontWeight="Bold" Foreground="White"/>
+        <TextBlock x:Name="NumberOfPagesBox" Margin="386,129,362,302" TextAlignment="Center" FontSize="11" FontWeight="Bold" Foreground="White"/>
         <TextBlock x:Name="DescriptionBox" Margin="349,209,94,100" TextAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"/>
+        <Image x:Name="VIPImage" Margin="486,122,288,307"/>
+        <Image x:Name="BookMarkImage" Margin="486,122,288,307"/>
     </Grid>
 </Window>

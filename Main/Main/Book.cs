@@ -23,8 +23,8 @@ namespace Main
         public int NumberOfSells { get; set; } = 0; //not in db
         public ImageSource CoverSource { get; set; } //db as string
         public double costWithDiscount { get; set; } //not in db
-        public bool IsVIP { get; set; } //not in db
-        public ImageSource VIPImageSource { get; set; }
+        public bool IsVIP { get; set; }
+        public ImageSource VIPImageSource { get; set; } //not in db
 
         //Consructor:
         public Book(int id, string Name, string AuthorName, int NumberOfPages, int Cost, int DiscountPercentage, string Description, string CoverSource, bool IsVIP)
