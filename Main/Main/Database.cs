@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.IO;
+using System;
 
 
 
@@ -74,9 +76,10 @@ namespace Main
 
         public static void LoadAllUsers()
         {
-           
-                
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\db.mdf;Integrated Security=True;Connect Timeout=30");
+
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+$"{projectDirectory}\\Database\\db.mdf"+@";Integrated Security=True;Connect Timeout=30");
             { 
                 conn.Open();
                 string command = "SELECT * FROM Users";
