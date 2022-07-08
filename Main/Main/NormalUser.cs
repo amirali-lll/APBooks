@@ -16,7 +16,7 @@ namespace Main
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
         public double WalletMoney { get; set; } = 0;
-        public VIP VIPSubscription { get; set; } = new VIP(0);
+        public bool HasVIP { get; set; }
         public DateTime VIPStartingTime { get; set; }
         public DateTime VIPEndingTime { get; set;}
         public Cart cart { get; set; }
