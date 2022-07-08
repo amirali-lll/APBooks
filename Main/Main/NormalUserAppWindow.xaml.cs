@@ -32,17 +32,20 @@ namespace Main
         {
             NormalUserAppWindow appMainWindow = new NormalUserAppWindow(CurrentUser);
             appMainWindow.CurrentUserName.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
-            appMainWindow.VIPRemainedDays.Text = CurrentUser.VIPSubscription.VIPEndingTime.Day - DateTime.Now.Day + "";
             appMainWindow.WallatMoneyAmount.Text = (int)CurrentUser.WalletMoney + "";
+            appMainWindow.WalletMoneyBox.Text = (int)CurrentUser.WalletMoney + "";
             appMainWindow.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
             appMainWindow.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
             appMainWindow.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
             appMainWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
-            appMainWindow.WalletMoneyBox.Text = (int)CurrentUser.WalletMoney + "";
-            appMainWindow.VIPRemainedDaysBox.Text = CurrentUser.VIPSubscription.VIPEndingTime.Day - DateTime.Now.Day + "";
-            appMainWindow.VIPStartingDateBox.Text = CurrentUser.VIPSubscription.VIPStartingTime + "";
-            appMainWindow.VIPEndingDateBox.Text = CurrentUser.VIPSubscription.VIPEndingTime + "";
-            appMainWindow.FirstAndLastNameBox.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
+            if (CurrentUser.VIPSubscription != null)
+            {
+                appMainWindow.VIPRemainedDays.Text = CurrentUser.VIPSubscription.VIPEndingTime.Day - DateTime.Now.Day + "";
+                appMainWindow.VIPRemainedDaysBox.Text = CurrentUser.VIPSubscription.VIPEndingTime.Day - DateTime.Now.Day + "";
+                appMainWindow.VIPStartingDateBox.Text = CurrentUser.VIPSubscription.VIPStartingTime + "";
+                appMainWindow.VIPEndingDateBox.Text = CurrentUser.VIPSubscription.VIPEndingTime + "";
+                appMainWindow.FirstAndLastNameBox.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
+            }
             appMainWindow.Show();
         }
 
@@ -172,7 +175,14 @@ namespace Main
 
         private void VIPSubscriptionButton_Click(object sender, RoutedEventArgs e)
         {
-            MenuTab.SelectedItem = VIPSubscriptionTab;
+            if (CurrentUser.VIPSubscription != null)
+            {
+                MenuTab.SelectedItem = VIPSubscriptionTab_HasVIP;
+            }
+            else
+            {
+                MenuTab.SelectedItem = VIPSubscriptionTab_NoVIP;
+            }
         }
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
@@ -282,6 +292,32 @@ namespace Main
             Button button = sender as Button;
             Book b = button.DataContext as Book;
             BookInfoWindow.InitializeBookInfoWindow(CurrentUser, b, this);
+        }
+
+        private void VIPPayButton_Click(object sender, RoutedEventArgs e)
+        {
+            PayWindow.InitializePayWindow(VIP.VIPCost, CurrentUser, PayWindow.PayRequest.VIP, this);
+        }
+
+        private void VIPBuyButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(CurrentUser.WalletMoney < VIP.VIPCost)
+            {
+                MessageBox.Show("Your wallet money is not enough!");
+            }
+            else
+            {
+                CurrentUser.WalletMoney = CurrentUser.WalletMoney - VIP.VIPCost;
+                MessageBox.Show("VIP subscription bought successfully!");
+                VIP vip = new VIP();
+                CurrentUser.VIPSubscription = vip;
+                MenuTab.SelectedItem = VIPSubscriptionTab_HasVIP;
+                this.VIPRemainedDays.Text = CurrentUser.VIPSubscription.VIPEndingTime.Day - DateTime.Now.Day + "";
+                this.VIPRemainedDaysBox.Text = CurrentUser.VIPSubscription.VIPEndingTime.Day - DateTime.Now.Day + "";
+                this.VIPStartingDateBox.Text = CurrentUser.VIPSubscription.VIPStartingTime + "";
+                this.VIPEndingDateBox.Text = CurrentUser.VIPSubscription.VIPEndingTime + "";
+                this.FirstAndLastNameBox.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
+            }
         }
     }
 }
