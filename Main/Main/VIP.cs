@@ -17,5 +17,17 @@ namespace Main
             VIPStartingTime = DateTime.Now;
             VIPEndingTime = VIPStartingTime.AddDays(VIPDuration);
         }
+        public static List<Book> VIPBooks { get; set; } = new List<Book>();
+        public static void SetVIPBooks()
+        {
+            VIPBooks.Clear();
+            foreach(Book book in Book.AllBooks)
+            {
+                if (book.IsVIP)
+                {
+                    VIPBooks.Add(book);
+                }
+            }
+        }
     }
 }
