@@ -43,9 +43,9 @@ namespace Main
 
 
 
-        static public List<Manager> GetAllManagers()
+        static public void GetAllManagers()
         {
-            List<Manager> managers = new List<Manager>();
+            
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\db.mdf;Integrated Security=True;Connect Timeout=30");
             conn.Open();
             string command = "SELECT * FROM Managers";
@@ -57,11 +57,10 @@ namespace Main
                 string email = (string)data.Rows[i][1];
                 string password = (string)data.Rows[i][2];
                 Manager manager = new Manager(email, password);
-                managers.Add(manager);
+                
             }
 
             conn.Close();
-            return managers;
         }
 
 
