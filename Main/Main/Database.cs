@@ -12,7 +12,14 @@ namespace Main
 {
     class Database
     {
-      
+        //remain : 1-BookRates.
+        public void LoadAll()
+        {
+            LoadAllBooks();
+            LoadAllManagers();
+            LoadAllUsers();
+        }
+
 
         public static void LoadAllBooks()
         {
@@ -43,7 +50,7 @@ namespace Main
 
 
 
-        static public void GetAllManagers()
+        static public void LoadAllManagers()
         {
             
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\db.mdf;Integrated Security=True;Connect Timeout=30");
