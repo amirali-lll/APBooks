@@ -9,6 +9,7 @@ namespace Main
     public class NormalUser
     {
         //Properties:
+        public int    Id        { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -32,6 +33,21 @@ namespace Main
             AllUsers.Add(this);
             cart = new Cart(this);
         }
+        //Cunstructor to load users
+        public NormalUser(int id, string firstName, string lastName, string email, string phoneNumber, string password, double walletMoney)
+        {
+            Id = id;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            PhoneNumber = phoneNumber;
+            Password = password;
+            WalletMoney = walletMoney;
+            AllEmails.Add(Email);
+            AllUsers.Add(this);
+            cart = new Cart(this);
+        }
+
 
         //Collections:
         public List<Book> BoughtBooks { get; set; } = new List<Book>();
