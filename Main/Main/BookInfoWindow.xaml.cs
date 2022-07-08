@@ -69,13 +69,20 @@ namespace Main
             }
         }
 
-        private void AddToYourCartButton_Click(object sender, RoutedEventArgs e)
+        private void RedButton_Click(object sender, RoutedEventArgs e)
         {
-            CurrentUser.cart.Add(CurrentBook);
-            BackWindow.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
-            BackWindow.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
-            BackWindow.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
-            BackWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
+            if (CurrentUser.BoughtBooks.Contains(CurrentBook))
+            {
+
+            }
+            else
+            {
+                CurrentUser.cart.Add(CurrentBook);
+                BackWindow.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
+                BackWindow.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
+                BackWindow.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
+                BackWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
+            }
         }
     }
 }

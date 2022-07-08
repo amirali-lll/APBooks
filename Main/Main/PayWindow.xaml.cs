@@ -75,6 +75,7 @@ namespace Main
                         BackWindow.VIPStartingDateBox.Text = CurrentUser.VIPSubscription.VIPStartingTime + "";
                         BackWindow.VIPEndingDateBox.Text = CurrentUser.VIPSubscription.VIPEndingTime + "";
                         BackWindow.FirstAndLastNameBox.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
+                        Close();
                     }
                 }
             }

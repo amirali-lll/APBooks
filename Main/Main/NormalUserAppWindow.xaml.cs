@@ -175,6 +175,8 @@ namespace Main
 
         private void VIPSubscriptionButton_Click(object sender, RoutedEventArgs e)
         {
+            VIP.SetVIPBooks();
+            DataContext = VIP.VIPBooks;
             if (CurrentUser.VIPSubscription != null)
             {
                 MenuTab.SelectedItem = VIPSubscriptionTab_HasVIP;
@@ -182,6 +184,8 @@ namespace Main
             else
             {
                 MenuTab.SelectedItem = VIPSubscriptionTab_NoVIP;
+                this.VIPDurationBox.Text = VIP.VIPDuration + "";
+                this.VIPCostBox.Text = VIP.VIPCost + "";
             }
         }
 
