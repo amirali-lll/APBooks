@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Database.cs" />
     <Compile Include="NormalUserAppWindow.xaml.cs">
       <DependentUpon>NormalUserAppWindow.xaml</DependentUpon>
     </Compile>
