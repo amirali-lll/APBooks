@@ -71,7 +71,9 @@ namespace Main
                     }
                     else
                     {
-
+                        Manager CurrentManager = Manager.FindManager(LoginTabEmailBox.Text);
+                        ManagerAppWindow managerAppWindow = new ManagerAppWindow();
+                        managerAppWindow.Show();
                     }
                     Close();
                 }
