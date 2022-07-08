@@ -38,7 +38,7 @@ namespace Main
             Book book9 = new Book(9, "Mark Zuckerberg In His Own Words", "George Beahm", 208, 50000, 15, "Mark Zuckerberg: In His Own Words details the visionary thoughts and opinions of Facebook's founder entirely through direct quotations from Zuckerberg himself. It is an intimate and authoritative look at the man behind Facebook's once-in-a-generation success.", "https://s6.uupload.ir/files/mark_zuckerberg_icxr.jpg", false);
             Book book10 = new Book(10, "Warren Buffett In His Own Words", "David Andrews", 208, 50000, 15, "Warren Buffett: In His Own Words is a comprehensive guidebook to the inner workings of this business icon, providing insight into his thoughts on investing, Wall Street, business, politics, taxes, life lessons, and more.", "https://s6.uupload.ir/files/warren_buffet_zed4.jpg", false);
             NormalUser User1 = new NormalUser("Current", "User", "a@b.com", "09123456789", "AAAAaaaa");
-
+            Database.LoadAll();
             User1.WalletMoney = 65000;
             VIP VIP1 = new VIP(15);
             User1.VIPStartingTime = new DateTime(2022, 7, 1);
