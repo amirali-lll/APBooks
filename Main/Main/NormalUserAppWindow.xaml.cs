@@ -166,6 +166,7 @@ namespace Main
 
         private void MarkedBooksButton_Click(object sender, RoutedEventArgs e)
         {
+            DataContext = CurrentUser.MarkedBooks;
             MenuTab.SelectedItem = MarkedBooksTab;
         }
 

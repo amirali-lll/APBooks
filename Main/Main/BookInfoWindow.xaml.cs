@@ -42,7 +42,34 @@ namespace Main
             bookInfoWindow.NumberOfPagesBox.Text = book.NumberOfPages + "";
             bookInfoWindow.DescriptionBox.Text = book.Description;
             bookInfoWindow.VIPImage.Source = book.VIPImageSource;
+            if (CurrentUser.MarkedBooks.Contains(book))
+            {
+                Uri uri1 = new Uri("https://s6.uupload.ir/files/bookmarked_7x7x.png", UriKind.Absolute);
+                ImageSource BookImgSource = new BitmapImage(uri1);
+                bookInfoWindow.BookMarkImage.Source = BookImgSource;
+            }
             bookInfoWindow.Show();
+        }
+
+        private void MarkItButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentUser.MarkedBooks.Contains(CurrentBook))
+            {
+                MessageBox.Show("This book have already been marked for you!");
+            }
+            else
+            {
+                CurrentUser.MarkedBooks.Add(CurrentBook);
+                MessageBox.Show("This book successfully marked for you!");
+                Uri uri1 = new Uri("https://s6.uupload.ir/files/bookmarked_7x7x.png", UriKind.Absolute);
+                ImageSource BookImgSource = new BitmapImage(uri1);
+                this.BookMarkImage.Source = BookImgSource;
+            }
+        }
+
+        private void AddToYourCartButton_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentUser.cart.Add(CurrentBook);
         }
     }
 }
