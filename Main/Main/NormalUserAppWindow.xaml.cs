@@ -275,5 +275,12 @@ namespace Main
             this.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
             this.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
         }
+
+        private void OnBookButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            Book b = button.DataContext as Book;
+            BookInfoWindow.InitializeBookInfoWindow(CurrentUser, b);
+        }
     }
 }

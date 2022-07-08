@@ -1,0 +1,20 @@
+﻿<Window x:Class="Main.BookInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Main"
+        mc:Ignorable="d"
+        Title="BookInfoWindow" Height="480" Width="813" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="BackgroundImage" ImageSource="https://s6.uupload.ir/files/book_info_page(not_bought)_pw14.png"/>
+        </Grid.Background>
+
+        <Image x:Name="BookCover" Margin="86,86,547,147"/>
+        <TextBlock x:Name="BookNameBox" Margin="74,337,534,73" TextAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"/>
+        <TextBlock x:Name="AuthorNameBox" Margin="386,77,254,354" TextAlignment="Center" FontSize="11" FontWeight="Bold" Foreground="White"/>
+        <TextBlock x:Name="NumberOfPagesBox" Margin="386,122,362,309" TextAlignment="Center" FontSize="11" FontWeight="Bold" Foreground="White"/>
+        <TextBlock x:Name="DescriptionBox" Margin="349,209,94,100" TextAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"/>
+    </Grid>
+</Window>

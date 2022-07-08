@@ -29,7 +29,7 @@
                                             <TextBlock x:Name="CostWithDiscountBox" Text="{Binding costWithDiscount}" Height="40" Width="140" Margin="62,225,0,0" Background="Transparent" FontSize="20" Foreground="Black" FontWeight="Bold"/>
                                             <TextBlock x:Name="DiscountBox" Text="{Binding DiscountPercentageText}" Height="25" Width="36" Margin="120,215,0,0" FontSize="16" Background="OrangeRed" Foreground="White" TextAlignment="Center"/>
                                             <Image Name="AddToCart" Height="40" Width="40" Opacity="0.6" Source="https://s6.uupload.ir/files/addtocart_3vcf.png" Margin="0,210,115,0"/>
-                                            <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand"/>
+                                            <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand" Click="OnBookButton_Click"/>
                                             <Button Name="AddToCartButton" Height="40" Width="40" Opacity="0.4" Margin="0,210,115,0" Cursor="Hand" Background="Transparent" Click="AddToCartButton_Click"/>
                                         </Grid>
                                     </DataTemplate>
