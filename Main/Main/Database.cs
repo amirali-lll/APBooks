@@ -80,6 +80,7 @@ namespace Main
             string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+$"{projectDirectory}\\Database\\db.mdf"+@";Integrated Security=True;Connect Timeout=30");
+            //select from Users Table
             { 
                 conn.Open();
                 string command = "SELECT * FROM Users";
@@ -98,6 +99,7 @@ namespace Main
                     NormalUser user = new NormalUser(id, FirstName, LastName, Email, PhoneNumber, password, walletMoney);
                 }
             }
+            //select from UsersMarkedBooks Table
             {
                 string command = "SELECT * FROM UsersMarkedBooks";
                 var adapter = new SqlDataAdapter(command, conn);
@@ -116,6 +118,7 @@ namespace Main
                     user.MarkedBooks.Add(book);
                 }
             }
+            //select from UsersBoughtBooks Table
             {
                 var command = "SELECT * FROM UsersBoughtBooks";
                 var adapter = new SqlDataAdapter(command, conn);
@@ -134,10 +137,11 @@ namespace Main
                     user.BoughtBooks.Add(book);
                 }
             }
+            //select from UsersCartBooks Table
             {
                 var command = "SELECT * FROM UsersCartBooks";
                 var adapter = new SqlDataAdapter(command, conn);
-                var data = new DataTable();
+                var data    = new DataTable();
 
                 adapter.Fill(data);
 
@@ -152,7 +156,68 @@ namespace Main
                     user.cart.CartBooks.Add(book);
                 }
             }
+            //select from VIPStatics Table
+            {
+                var command = "SELECT * FROM VIPStatics";
+                var adapter = new SqlDataAdapter(command, conn);
+                var data = new DataTable();
 
+                adapter.Fill(data);
+                double cost     = (double) data.Rows[0][0];
+                int    duration = (int)    data.Rows[0][1];
+                VIP.VIPCost = cost;
+                
+            }
+            //select from UsersVIP Table
+            {
+                var command = "SELECT * FROM UsersVIP";
+                var adapter = new SqlDataAdapter(command, conn);
+                var data    = new DataTable();
+
+                adapter.Fill(data);
+
+                for (int i = 0; i < data.Rows.Count; i++)
+                {
+                    int      userId   = (int)data.Rows[i][0];
+                    DateTime start    = DateTime.Parse((string)data.Rows[i][1]);
+                    DateTime end      = DateTime.Parse((string)data.Rows[i][2]);
+                    
+
+
+
+
+                    NormalUser user = NormalUser.AllUsers.FirstOrDefault(x => x.Id == userId);
+
+                    VIP vip = new VIP(start, end);
+                    user.VIPSubscription = vip;
+
+                }
+
+            }
+            //select from UsersVIP Rates
+            {
+                string command = "SELECT * FROM Rates";
+                var adapter = new SqlDataAdapter(command, conn);
+                var data = new DataTable();
+               
+                adapter.Fill(data);
+                
+                for (int i = 0; i < data.Rows.Count; i++)
+                {
+                    int  bookId = (int)data.Rows[i][0];
+                    int  userId = (int)data.Rows[i][1];
+                    int  amount = (int)data.Rows[i][2];
+
+                    Book book   = Book.AllBooks.FirstOrDefault(x => x.id == bookId);
+
+                    NormalUser user = NormalUser.AllUsers.FirstOrDefault(x => x.Id == userId);
+                    Rate rate = new Rate(amount, user);
+                    book.Rates.Add(rate);
+                    
+                }
+                
+                
+            }
 
 
             conn.Close();
