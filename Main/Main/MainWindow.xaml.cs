@@ -40,10 +40,6 @@ namespace Main
             NormalUser User1 = new NormalUser("Current", "User", "a@b.com", "09123456789", "AAAAaaaa");
             Database.LoadAll();
             User1.WalletMoney = 65000;
-            VIP VIP1 = new VIP(15);
-            User1.VIPStartingTime = new DateTime(2022, 7, 1);
-            User1.VIPEndingTime = new DateTime(2022, 7, User1.VIPStartingTime.Day + VIP1.Duration);
-            User1.VIPSubscription = VIP1;
             InitializeComponent();
         }
 

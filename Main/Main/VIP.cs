@@ -8,22 +8,9 @@ namespace Main
 {
     public class VIP
     {
-        public int Duration { get; set; }
-        public List<NormalUser> ActiveUsers()
-        {
-            List<NormalUser> users = new List<NormalUser>();
-            foreach(NormalUser user in NormalUser.AllUsers)
-            {
-                if(user.VIPSubscription == this)
-                {
-                    users.Add(user);
-                }
-            }
-            return users;
-        }
-        public VIP(int Duration)
-        {
-            this.Duration = Duration;
-        }
+        public DateTime VIPStartingTime { get; set; }
+        public DateTime VIPEndingTime { get; set; }
+        public static int VIPDuration { get; set; }
+        public static double VIPCost { get; set; }
     }
 }

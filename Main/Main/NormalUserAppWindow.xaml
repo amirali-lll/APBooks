@@ -58,7 +58,7 @@
                                         <Grid x:Name="BookTemplate" Height="260" Width="180" Margin="5,10,10,5" Background="#FFF2F2F2" >
                                             <Image x:Name="CoverImage" Height="200" Width="140" Margin="0,0,0,30" Source="{Binding CoverSource}"/>
                                             <TextBlock x:Name="BookName" Text="{Binding Name}" Height="40" Width="120" Margin="5,225,0,0" FontSize="16" Foreground="black" TextAlignment="Center" FontWeight="bold"/>
-                                            <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand"/>
+                                            <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand" Click="OnBookButton_Click"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -89,7 +89,7 @@
                                             <Image x:Name="VIPStar" Height="25" Width="25" Source="{Binding VIPImageSource}" Margin="0,0,145,225"/>
                                             <TextBlock x:Name="BookName" Text="{Binding Name}" Height="30" Width="120" Margin="5,215,0,0" FontSize="10" Foreground="black" TextAlignment="Center" FontWeight="bold"/>
                                             <TextBlock x:Name="AuthorName" Text="{Binding AuthorName}" Height="30" Width="120" Margin="5,240,0,0" FontSize="8" Foreground="black" TextAlignment="Center"/>
-                                            <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand"/>
+                                            <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand" Click="OnBookButton_Click"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -124,7 +124,7 @@
                                             <Image x:Name="VIPStar" Height="25" Width="25" Source="{Binding VIPImageSource}" Margin="0,0,145,225"/>
                                             <TextBlock x:Name="CostWithDiscountBox" Text="{Binding costWithDiscount}" Height="40" Width="140" Margin="62,225,0,0" Background="Transparent" FontSize="20" Foreground="Black" FontWeight="Bold"/>
                                             <TextBlock x:Name="DiscountBox" Text="{Binding DiscountPercentageText}" Height="25" Width="36" Margin="120,215,0,0" FontSize="16" Background="OrangeRed" Foreground="White" TextAlignment="Center"/>
-                                            <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand"/>
+                                            <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand" Click="OnBookButton_Click"/>
                                             <Image x:Name="Trash" Height="50" Width="35" Source="https://s6.uupload.ir/files/trash_qc7d.png" Margin="0,210,125,0" Opacity="0.5"/>
                                             <Button x:Name="TrashButton" Height="50" Width="35" Background="Transparent" BorderBrush="Transparent" Margin="0,210,125,0" Opacity="0.2" Cursor="Hand" Click="TrashButton_Click"/>
                                         </Grid>
@@ -159,17 +159,53 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/markedbookstabbackground_sb8h.png"/>
                     </Grid.Background>
+                    <Grid x:Name="MarkedBooksItems" Height="540" Width="880" Margin="290,70,0,10" Background="Transparent">
+                        <ScrollViewer>
+                            <ItemsControl ItemsSource="{Binding}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <UniformGrid Columns="4" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid x:Name="BookTemplate" Height="260" Width="180" Margin="5,10,10,5" Background="#FFF2F2F2" >
+                                            <Image x:Name="CoverImage" Height="200" Width="140" Margin="0,0,0,30" Source="{Binding CoverSource}"/>
+                                            <Image x:Name="VIPStar" Height="25" Width="25" Source="{Binding VIPImageSource}" Margin="0,0,145,225"/>
+                                            <TextBlock x:Name="CostWithDiscountBox" Text="{Binding costWithDiscount}" Height="40" Width="140" Margin="62,225,0,0" Background="Transparent" FontSize="20" Foreground="Black" FontWeight="Bold"/>
+                                            <TextBlock x:Name="DiscountBox" Text="{Binding DiscountPercentageText}" Height="25" Width="36" Margin="120,215,0,0" FontSize="16" Background="OrangeRed" Foreground="White" TextAlignment="Center"/>
+                                            <Image Name="AddToCart" Height="40" Width="40" Opacity="0.6" Source="https://s6.uupload.ir/files/addtocart_3vcf.png" Margin="0,210,115,0"/>
+                                            <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand" Click="OnBookButton_Click"/>
+                                            <Button Name="AddToCartButton" Height="40" Width="40" Opacity="0.4" Margin="0,210,115,0" Cursor="Hand" Background="Transparent" Click="AddToCartButton_Click"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </Grid>
                 </Grid>
             </TabItem>
 
-            <TabItem Name="VIPSubscriptionTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
+            <TabItem Name="VIPSubscriptionTab_NoVIP" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
                 <Grid>
                     <Grid.Background>
-                        <ImageBrush ImageSource="https://s6.uupload.ir/files/vipsubscriptiontabbackground_lxu3.png"/>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/viptabbackground(no_vip)_5h71.png"/>
                     </Grid.Background>
-                    <TextBlock x:Name="VIPRemainedDaysBox" Text="" Margin="391,107,690,505" FontSize="38" TextAlignment="Center" Foreground="#FFCCB672"/>
-                    <TextBlock x:Name="VIPStartingDateBox" Text="" Margin="650,100,0,510" Height="40" Width="300" TextAlignment="Left" FontSize="18" Foreground="#FF86774B"/>
-                    <TextBlock x:Name="VIPEndingDateBox" Text="" Margin="650,100,0,440" Height="40" Width="300" TextAlignment="Left" FontSize="18" Foreground="#FF86774B"/>
+                    <TextBlock x:Name="VIPDurationBox" Text="" Margin="415,94,0,0" FontSize="26" TextAlignment="Center" Foreground="#FFCCB672" FontWeight="Bold"/>
+                    <TextBlock x:Name="VIPCostBox" Text="80000" Margin="350,135,0,0" FontSize="24" TextAlignment="Center" Foreground="#FFCCB672"/>
+                    <Button x:Name="VIPPayButton" Height="60" Width="120" Margin="700,15,0,400" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.2" Click="VIPPayButton_Click"/>
+                    <Button x:Name="VIPBuyButton" Height="60" Width="120" Margin="960,15,0,400" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Opacity="0.2" Click="VIPBuyButton_Click"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="VIPSubscriptionTab_HasVIP" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/viptabbackground(hasvip)_h5l7.png"/>
+                    </Grid.Background>
+                    <TextBlock x:Name="VIPRemainedDaysBox" Text="" Margin="460,107,690,505" FontSize="38" TextAlignment="Center" Foreground="#FFCCB672"/>
+                    <TextBlock x:Name="VIPStartingDateBox" Text="" Margin="690,100,0,510" Height="40" Width="300" TextAlignment="Left" FontSize="18" Foreground="#FF86774B"/>
+                    <TextBlock x:Name="VIPEndingDateBox" Text="" Margin="690,100,0,440" Height="40" Width="300" TextAlignment="Left" FontSize="18" Foreground="#FF86774B"/>
                 </Grid>
             </TabItem>
 

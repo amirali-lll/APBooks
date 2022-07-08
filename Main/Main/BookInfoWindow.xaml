@@ -12,13 +12,13 @@
         </Grid.Background>
 
         <Image x:Name="BookCover" Margin="86,86,547,147"/>
-        <TextBlock x:Name="BookNameBox" Margin="74,339,534,71" TextAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"/>
+        <TextBlock x:Name="BookNameBox" TextWrapping="WrapWithOverflow" Margin="74,339,534,59" TextAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"/>
         <TextBlock x:Name="AuthorNameBox" Height="35" Width="170" TextAlignment="Center" FontSize="11" FontWeight="Bold" Foreground="White" Margin="386,81,257,348"/>
         <TextBlock x:Name="NumberOfPagesBox" Height="35" Margin="428,128,342,301" TextAlignment="Center" FontSize="11" FontWeight="Bold" Foreground="White"/>
         <TextBlock x:Name="DescriptionBox" TextWrapping="Wrap" Margin="349,228,94,104" TextAlignment="Center" FontSize="14" Foreground="White"/>
-        <Image x:Name="VIPImage" Height="35" Width="35" Margin="190,0,0,180" />
-        <Image x:Name="BookMarkImage" Height="35" Width="30" Margin="530,122,253,307"/>
-        <Button x:Name="MarkItButton" Width="170" BorderBrush="Transparent" Background="Transparent" Margin="571,68,72,339" Opacity="0.2" Cursor="Hand" Click="MarkItButton_Click"/>
-        <Button x:Name="AddToYourCartButton" Width="170" BorderBrush="Transparent" Background="Transparent" Margin="571,114,72,292" Opacity="0.2" Cursor="Hand" Click="AddToYourCartButton_Click"/>
+        <Image x:Name="VIPImage" Height="35" Width="35" Margin="490,125,288,304" />
+        <Image x:Name="BookMarkImage" Height="40" Width="36" Margin="524,114,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button x:Name="MarkItButton" BorderBrush="Transparent" Background="Transparent" Margin="567,68,58,339" Opacity="0.2" Cursor="Hand" Click="MarkItButton_Click"/>
+        <Button x:Name="AddToYourCartButton" Width="170" BorderBrush="Transparent" Background="Transparent" Margin="577,114,66,292" Opacity="0.2" Cursor="Hand" Click="AddToYourCartButton_Click"/>
     </Grid>
 </Window>

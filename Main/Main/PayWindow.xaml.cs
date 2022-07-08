@@ -20,7 +20,7 @@ namespace Main
     /// </summary>
     public partial class PayWindow : Window
     {
-        public enum PayRequest { Cart, Wallet}
+        public enum PayRequest { Cart, Wallet, VIP}
         public PayRequest Request { get; set;}
         public NormalUser CurrentUser;
         public NormalUserAppWindow BackWindow;
@@ -50,17 +50,31 @@ namespace Main
                     {
                         CurrentUser.cart.CartBooks.Clear();
                         MessageBox.Show("Books bought successfully!");
-                        BackWindow.Close();
-                        NormalUserAppWindow.InitializeNormalUserAppMainWindow(CurrentUser);
+                        BackWindow.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
+                        BackWindow.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
+                        BackWindow.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
+                        BackWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
+                        Close();
+                    }
+                    else if(Request == PayRequest.Cart)
+                    {
+                        CurrentUser.WalletMoney = CurrentUser.WalletMoney + Convert.ToInt32(ToBePaidPriceBox.Text);
+                        MessageBox.Show("Wallet charged successfully!");
+                        BackWindow.WallatMoneyAmount.Text = (int)CurrentUser.WalletMoney + "";
+                        BackWindow.WalletMoneyBox.Text = (int)CurrentUser.WalletMoney + "";
                         Close();
                     }
                     else
                     {
-                        CurrentUser.WalletMoney = CurrentUser.WalletMoney + Convert.ToInt32(ToBePaidPriceBox.Text);
-                        MessageBox.Show("Wallet charged successfully!");
-                        BackWindow.Close();
-                        NormalUserAppWindow.InitializeNormalUserAppMainWindow(CurrentUser);
-                        Close();
+                        MessageBox.Show("VIP subscription bought successfully!");
+                        VIP vip = new VIP();
+                        CurrentUser.VIPSubscription = vip;
+                        BackWindow.MenuTab.SelectedItem = BackWindow.VIPSubscriptionTab_HasVIP;
+                        BackWindow.VIPRemainedDays.Text = CurrentUser.VIPSubscription.VIPEndingTime.Day - DateTime.Now.Day + "";
+                        BackWindow.VIPRemainedDaysBox.Text = CurrentUser.VIPSubscription.VIPEndingTime.Day - DateTime.Now.Day + "";
+                        BackWindow.VIPStartingDateBox.Text = CurrentUser.VIPSubscription.VIPStartingTime + "";
+                        BackWindow.VIPEndingDateBox.Text = CurrentUser.VIPSubscription.VIPEndingTime + "";
+                        BackWindow.FirstAndLastNameBox.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
                     }
                 }
             }
