@@ -22,6 +22,7 @@ namespace Main
         //Constructor:
         public NormalUser(string FirstName, string LastName, string Email, string PhoneNumber, string Password)
         {
+            Id = GenerateID();
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.Email = Email;
@@ -44,6 +45,17 @@ namespace Main
             AllEmails.Add(Email);
             AllUsers.Add(this);
             cart = new Cart(this);
+        }
+
+        public static int GenerateID()
+        {
+            List<int> all_id = AllUsers.Select(x => x.Id).ToList();
+            int i = 0;
+            while (all_id.Contains(i))
+            {
+                i++;
+            }
+            return i;
         }
 
 
