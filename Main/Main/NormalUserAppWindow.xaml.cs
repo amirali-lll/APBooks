@@ -281,7 +281,7 @@ namespace Main
         {
             Button button = sender as Button;
             Book b = button.DataContext as Book;
-            BookInfoWindow.InitializeBookInfoWindow(CurrentUser, b);
+            BookInfoWindow.InitializeBookInfoWindow(CurrentUser, b, this);
         }
     }
 }

@@ -21,15 +21,17 @@ namespace Main
     {
         public NormalUser CurrentUser { get; set; }
         public Book CurrentBook { get; set; }
-        public BookInfoWindow(NormalUser CurrentUser, Book CurrentBook)
+        public NormalUserAppWindow BackWindow { get; set; }
+        public BookInfoWindow(NormalUser CurrentUser, Book CurrentBook, NormalUserAppWindow BackWindow)
         {
+            this.BackWindow = BackWindow;
             this.CurrentUser = CurrentUser;
             this.CurrentBook = CurrentBook;
             InitializeComponent();
         }
-        public static void InitializeBookInfoWindow(NormalUser CurrentUser, Book book)
+        public static void InitializeBookInfoWindow(NormalUser CurrentUser, Book book, NormalUserAppWindow BackWindow)
         {
-            BookInfoWindow bookInfoWindow = new BookInfoWindow(CurrentUser, book);
+            BookInfoWindow bookInfoWindow = new BookInfoWindow(CurrentUser, book, BackWindow);
             if (CurrentUser.BoughtBooks.Contains(book))
             {
                 Uri uri1 = new Uri("https://s6.uupload.ir/files/book_info_page(bought)_3vqv.png", UriKind.Absolute);
@@ -70,6 +72,10 @@ namespace Main
         private void AddToYourCartButton_Click(object sender, RoutedEventArgs e)
         {
             CurrentUser.cart.Add(CurrentBook);
+            BackWindow.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
+            BackWindow.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
+            BackWindow.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
+            BackWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
         }
     }
 }
