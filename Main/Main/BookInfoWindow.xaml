@@ -18,7 +18,7 @@
         <TextBlock x:Name="DescriptionBox" TextWrapping="Wrap" Margin="349,228,94,104" TextAlignment="Center" FontSize="14" Foreground="White"/>
         <Image x:Name="VIPImage" Height="35" Width="35" Margin="490,125,288,304" />
         <Image x:Name="BookMarkImage" Height="40" Width="36" Margin="524,114,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Button x:Name="MarkItButton" BorderBrush="Transparent" Background="Transparent" Margin="561,68,64,339" Opacity="0.2" Cursor="Hand" Click="MarkItButton_Click"/>
+        <Button x:Name="MarkItButton" BorderBrush="Transparent" Background="Transparent" Margin="567,68,58,339" Opacity="0.2" Cursor="Hand" Click="MarkItButton_Click"/>
         <Button x:Name="AddToYourCartButton" Width="170" BorderBrush="Transparent" Background="Transparent" Margin="577,114,66,292" Opacity="0.2" Cursor="Hand" Click="AddToYourCartButton_Click"/>
     </Grid>
 </Window>

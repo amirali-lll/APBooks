@@ -159,6 +159,30 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="https://s6.uupload.ir/files/markedbookstabbackground_sb8h.png"/>
                     </Grid.Background>
+                    <Grid x:Name="MarkedBooksItems" Height="540" Width="880" Margin="290,70,0,10" Background="Transparent">
+                        <ScrollViewer>
+                            <ItemsControl ItemsSource="{Binding}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <UniformGrid Columns="4" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid x:Name="BookTemplate" Height="260" Width="180" Margin="5,10,10,5" Background="#FFF2F2F2" >
+                                            <Image x:Name="CoverImage" Height="200" Width="140" Margin="0,0,0,30" Source="{Binding CoverSource}"/>
+                                            <Image x:Name="VIPStar" Height="25" Width="25" Source="{Binding VIPImageSource}" Margin="0,0,145,225"/>
+                                            <TextBlock x:Name="CostWithDiscountBox" Text="{Binding costWithDiscount}" Height="40" Width="140" Margin="62,225,0,0" Background="Transparent" FontSize="20" Foreground="Black" FontWeight="Bold"/>
+                                            <TextBlock x:Name="DiscountBox" Text="{Binding DiscountPercentageText}" Height="25" Width="36" Margin="120,215,0,0" FontSize="16" Background="OrangeRed" Foreground="White" TextAlignment="Center"/>
+                                            <Image Name="AddToCart" Height="40" Width="40" Opacity="0.6" Source="https://s6.uupload.ir/files/addtocart_3vcf.png" Margin="0,210,115,0"/>
+                                            <Button x:Name="OnBookButton" Height="260" Width="180" Background="Transparent" Opacity="0.1" Cursor="Hand" Click="OnBookButton_Click"/>
+                                            <Button Name="AddToCartButton" Height="40" Width="40" Opacity="0.4" Margin="0,210,115,0" Cursor="Hand" Background="Transparent" Click="AddToCartButton_Click"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </Grid>
                 </Grid>
             </TabItem>
 
