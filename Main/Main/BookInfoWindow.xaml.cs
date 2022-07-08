@@ -32,7 +32,7 @@ namespace Main
         public static void InitializeBookInfoWindow(NormalUser CurrentUser, Book book, NormalUserAppWindow BackWindow)
         {
             BookInfoWindow bookInfoWindow = new BookInfoWindow(CurrentUser, book, BackWindow);
-            if (CurrentUser.BoughtBooks.Contains(book))
+            if (CurrentUser.BoughtBooks.Contains(book) || (CurrentUser.VIPSubscription != null && book.IsVIP))
             {
                 Uri uri1 = new Uri("https://s6.uupload.ir/files/book_info_page(bought)_3vqv.png", UriKind.Absolute);
                 ImageSource BookImgSource = new BitmapImage(uri1);
@@ -73,7 +73,7 @@ namespace Main
         {
             if (CurrentUser.BoughtBooks.Contains(CurrentBook))
             {
-
+                
             }
             else
             {
