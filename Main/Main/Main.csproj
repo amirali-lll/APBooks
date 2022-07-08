@@ -59,6 +59,7 @@
       <DependentUpon>BookInfoWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Rate.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="NormalUserAppWindow.xaml.cs">
       <DependentUpon>NormalUserAppWindow.xaml</DependentUpon>
     </Compile>

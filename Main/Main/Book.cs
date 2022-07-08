@@ -50,6 +50,21 @@ namespace Main
             }
             AllBooks.Add(this);
         }
+        //Consructor for db load:
+        public Book(int id, string name, string authorName, int numberOfPages, string description, double cost, int discountPercentage, int numberOfSells , string imageURL,string PDFURL)
+        {
+            this.id = id;
+            Name = name;
+            AuthorName = authorName;
+            NumberOfPages = numberOfPages;
+            Description = description;
+            Cost = cost;
+            DiscountPercentage = discountPercentage;
+            NumberOfSells = numberOfSells;
+            AllBooks.Add(this);
+        }
+
+
 
         //Methods:
         public double CostWithDiscount()
