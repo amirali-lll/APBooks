@@ -32,16 +32,16 @@ namespace Main
         {
             NormalUserAppWindow appMainWindow = new NormalUserAppWindow(CurrentUser);
             appMainWindow.CurrentUserName.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
-            appMainWindow.VIPRemainedDays.Text = CurrentUser.VIPEndingTime.Day - DateTime.Now.Day + "";
+            appMainWindow.VIPRemainedDays.Text = CurrentUser.VIPSubscription.VIPEndingTime.Day - DateTime.Now.Day + "";
             appMainWindow.WallatMoneyAmount.Text = (int)CurrentUser.WalletMoney + "";
             appMainWindow.CostBox.Text = (int)CurrentUser.cart.Cost() + "";
             appMainWindow.DiscountBox.Text = (int)CurrentUser.cart.Discount() + "";
             appMainWindow.TotalCostBox.Text = (int)CurrentUser.cart.CostWithDiscount() + "";
             appMainWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
             appMainWindow.WalletMoneyBox.Text = (int)CurrentUser.WalletMoney + "";
-            appMainWindow.VIPRemainedDaysBox.Text = CurrentUser.VIPEndingTime.Day - DateTime.Now.Day + "";
-            appMainWindow.VIPStartingDateBox.Text = CurrentUser.VIPStartingTime + "";
-            appMainWindow.VIPEndingDateBox.Text = CurrentUser.VIPEndingTime + "";
+            appMainWindow.VIPRemainedDaysBox.Text = CurrentUser.VIPSubscription.VIPEndingTime.Day - DateTime.Now.Day + "";
+            appMainWindow.VIPStartingDateBox.Text = CurrentUser.VIPSubscription.VIPStartingTime + "";
+            appMainWindow.VIPEndingDateBox.Text = CurrentUser.VIPSubscription.VIPEndingTime + "";
             appMainWindow.FirstAndLastNameBox.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
             appMainWindow.Show();
         }

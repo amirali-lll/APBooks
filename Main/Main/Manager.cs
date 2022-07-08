@@ -10,8 +10,6 @@ namespace Main
     {
         public string Email { get; set; }
         public string Password { get; set; }
-        public static int VIPDuration { get; set; }
-        public static double VIPCost { get; set; }
 
         //Constructor:
         public Manager(string Email, string Password)
