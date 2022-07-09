@@ -27,30 +27,35 @@ namespace Main
         public ImageSource VIPImageSource { get; set; } //not in db
         public string PDFURL { get; set; } = "";
         public List<Rate> Rates { get; set; } = new List<Rate>();
+        public static List<int> ids { get; set; } = new List<int>();
 
         //Consructor:
         public Book(int id, string Name, string AuthorName, int NumberOfPages, int Cost, int DiscountPercentage, string Description, string CoverSource, bool IsVIP)
         {
-            this.id = id;
-            this.Name = Name;
-            this.AuthorName = AuthorName;
-            this.NumberOfPages = NumberOfPages;
-            this.Cost = Cost;
-            this.DiscountPercentage = DiscountPercentage;
-            this.Description = Description;
-            Uri uri = new Uri(CoverSource, UriKind.Absolute);
-            ImageSource BookImgSource = new BitmapImage(uri);
-            this.CoverSource = BookImgSource;
-            this.costWithDiscount = CostWithDiscount();
-            this.IsVIP = IsVIP;
-            DiscountPercentageText = DiscountPercentage + "%";
-            if (IsVIP)
+            if (!ids.Contains(id))
             {
-                Uri uri2 = new Uri("https://s6.uupload.ir/files/vipstar_g9d.png", UriKind.Absolute);
-                ImageSource VIPImgSource = new BitmapImage(uri2);
-                this.VIPImageSource = VIPImgSource;
+                this.id = id;
+                ids.Add(id);
+                this.Name = Name;
+                this.AuthorName = AuthorName;
+                this.NumberOfPages = NumberOfPages;
+                this.Cost = Cost;
+                this.DiscountPercentage = DiscountPercentage;
+                this.Description = Description;
+                Uri uri = new Uri(CoverSource, UriKind.Absolute);
+                ImageSource BookImgSource = new BitmapImage(uri);
+                this.CoverSource = BookImgSource;
+                this.costWithDiscount = CostWithDiscount();
+                this.IsVIP = IsVIP;
+                DiscountPercentageText = DiscountPercentage + "%";
+                if (IsVIP)
+                {
+                    Uri uri2 = new Uri("https://s6.uupload.ir/files/vipstar_g9d.png", UriKind.Absolute);
+                    ImageSource VIPImgSource = new BitmapImage(uri2);
+                    this.VIPImageSource = VIPImgSource;
+                }
+                AllBooks.Add(this);
             }
-            AllBooks.Add(this);
         }
         //Consructor for db load:
         public Book(int id, string name, string authorName, int numberOfPages, string description, double cost, int discountPercentage, int numberOfSells , string imageURL,string PDFURL)
