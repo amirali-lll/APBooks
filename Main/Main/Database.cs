@@ -134,7 +134,10 @@ namespace Main
                     Book book = Book.AllBooks.FirstOrDefault(x => x.id == bookId);
                     NormalUser user = NormalUser.AllUsers.FirstOrDefault(x => x.Id == userId);
 
-                    user.MarkedBooks.Add(book);
+                    if (!user.MarkedBooks.Contains(book))
+                    {
+                        user.MarkedBooks.Add(book);
+                    }
                 }
             }
             //select from UsersBoughtBooks Table
@@ -153,7 +156,10 @@ namespace Main
                     Book book = Book.AllBooks.FirstOrDefault(x => x.id == bookId);
                     NormalUser user = NormalUser.AllUsers.FirstOrDefault(x => x.Id == userId);
 
-                    user.BoughtBooks.Add(book);
+                    if (!user.BoughtBooks.Contains(book))
+                    {
+                        user.BoughtBooks.Add(book);
+                    }
                 }
             }
             //select from UsersCartBooks Table
@@ -172,7 +178,10 @@ namespace Main
                     Book book = Book.AllBooks.FirstOrDefault(x => x.id == bookId);
                     NormalUser user = NormalUser.AllUsers.FirstOrDefault(x => x.Id == userId);
 
-                    user.cart.CartBooks.Add(book);
+                    if (!user.cart.CartBooks.Contains(book))
+                    {
+                        user.cart.CartBooks.Add(book);
+                    }
                 }
             }
             //select from VIPStatics Table
