@@ -283,8 +283,9 @@ namespace Main
                 foreach (var user in NormalUser.AllUsers)
                 {
                     string command2 = $"INSERT INTO Users VALUES({user.Id},'{user.FirstName}','{user.LastName}','{user.Email}','{user.PhoneNumber}','{user.Password}',{user.WalletMoney})";
-                    SqlCommand comm2 = new SqlCommand(command2, conn);
-                    comm2.BeginExecuteNonQuery();
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.InsertCommand = new SqlCommand(command2, conn);
+                    adapter.InsertCommand.BeginExecuteNonQuery();
                 }
             }
             //Save Bought Books:
@@ -363,7 +364,9 @@ namespace Main
                     {
                         string command2 = $"INSERT INTO UsersVIP VALUES({user.Id},'{user.VIPSubscription.VIPStartingTime.ToString()}','{user.VIPSubscription.VIPEndingTime.ToString()}')";
                         SqlCommand comm2 = new SqlCommand(command2, conn);
-                        comm2.BeginExecuteNonQuery();
+                        SqlDataAdapter adapter = new SqlDataAdapter();
+                        adapter.InsertCommand = new SqlCommand(command2, conn);
+                        adapter.InsertCommand.BeginExecuteNonQuery();
                     }
                     
                 }
