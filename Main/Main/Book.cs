@@ -63,9 +63,12 @@ namespace Main
             Cost = cost;
             DiscountPercentage = discountPercentage;
             NumberOfSells = numberOfSells;
-            Uri uri = new Uri(imageURL, UriKind.Absolute);
-            ImageSource BookImgSource = new BitmapImage(uri);
-            this.CoverSource = BookImgSource;
+            if (imageURL != "")
+            {
+                Uri uri = new Uri(imageURL, UriKind.Absolute);
+                ImageSource BookImgSource = new BitmapImage(uri);
+                this.CoverSource = BookImgSource;
+            }
             this.costWithDiscount = CostWithDiscount();
             this.PDFURL = PDFURL;
             AllBooks.Add(this);
