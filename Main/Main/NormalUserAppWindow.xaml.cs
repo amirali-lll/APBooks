@@ -51,6 +51,7 @@ namespace Main
 
         private void LogOutButton_Click(object sender, RoutedEventArgs e)
         {
+            Database.SaveAll();
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
