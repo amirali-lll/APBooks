@@ -26,6 +26,7 @@ namespace Main
         public MOrU WichType { get; set; }
         public MainWindow()
         {
+            Database.LoadAll();
             //This lines will be deleted after assigning data base:
             //Book book1 = new Book(1, "The Alchemist", "Pauolo Coelho", 136, 55000, 20, "The Alchemist is a novel by Brazilian author Paulo Coelho which was first published in 1988. Originally written in Portuguese, it became a widely translated international bestseller.", "https://s6.uupload.ir/files/the_alchemist_na3u.jpg", true);
             //Book book2 = new Book(2, "Theusdays with Morrie", "Mitch Albom", 340, 60000, 30, "Tuesdays with Morrie is a memoir by American author Mitch Albom about a series of visits Albom made to his former sociology professor Morrie Schwartz, as Schwartz gradually dies of ALS.", "https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg", false);
@@ -35,10 +36,9 @@ namespace Main
             //Book book6 = new Book(6, "Extremely Loud and Incredibly Close", "Jonathan Safran Foer", 374, 50000, 10, "Oskar, a child suffering from a developmental disorder, sets out to discover a message left by his father when he accidentally comes across a mysterious key.", "https://s6.uupload.ir/files/extreamly_load_and_..._9fqy.jpg", false);
             //Book book7 = new Book(7, "Shoe Dog", "Phil Knight", 400, 70000, 50, "Shoe Dog is a memoir by Nike co-founder Phil Knight. The memoir chronicles the history of Nike from its founding as Blue Ribbon Sports and its early challenges to its evolution into one of the world's most recognized and profitable companies. It also highlights certain parts of Phil Knight's life.", "https://s6.uupload.ir/files/shoe_dog_o58x.jpg", true);
             //Book book8 = new Book(8, "Bill Gates In His Own Words", "Lisa Rogak", 208, 50000, 15, "Get inside the head of one of the most important leaders of our time with this collection of quotes from—global business icon and philanthropist Bill Gates, the co-founder and former CEO of Microsoft.", "https://s6.uupload.ir/files/bill_gates_tyr2.jpg", false);
-            //Book book9 = new Book(9, "Mark Zuckerberg In His Own Words", "George Beahm", 208, 50000, 15, "Mark Zuckerberg: In His Own Words details the visionary thoughts and opinions of Facebook's founder entirely through direct quotations from Zuckerberg himself. It is an intimate and authoritative look at the man behind Facebook's once-in-a-generation success.", "https://s6.uupload.ir/files/mark_zuckerberg_icxr.jpg", false);
-            //Book book10 = new Book(10, "Warren Buffett In His Own Words", "David Andrews", 208, 50000, 15, "Warren Buffett: In His Own Words is a comprehensive guidebook to the inner workings of this business icon, providing insight into his thoughts on investing, Wall Street, business, politics, taxes, life lessons, and more.", "https://s6.uupload.ir/files/warren_buffet_zed4.jpg", false);
+            Book book9 = new Book(9, "Mark Zuckerberg In His Own Words", "George Beahm", 208, 50000, 15, "Mark Zuckerberg: In His Own Words details the visionary thoughts and opinions of Facebook's founder entirely through direct quotations from Zuckerberg himself. It is an intimate and authoritative look at the man behind Facebook's once-in-a-generation success.", "https://s6.uupload.ir/files/mark_zuckerberg_icxr.jpg", true);
+            Book book10 = new Book(10, "Warren Buffett In His Own Words", "David Andrews", 208, 50000, 15, "Warren Buffett: In His Own Words is a comprehensive guidebook to the inner workings of this business icon, providing insight into his thoughts on investing, Wall Street, business, politics, taxes, life lessons, and more.", "https://s6.uupload.ir/files/warren_buffet_zed4.jpg", true);
             NormalUser User1 = new NormalUser("Current", "User", "a@b.com", "09123456789", "AAAAaaaa");
-            Database.LoadAll();
             User1.WalletMoney = 65000;
             InitializeComponent();
         }
