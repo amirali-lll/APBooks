@@ -25,6 +25,7 @@ namespace Main
         public double costWithDiscount { get; set; } //not in db
         public bool IsVIP { get; set; }
         public ImageSource VIPImageSource { get; set; } //not in db
+        public string PDFURL { get; set; } = "";
         public List<Rate> Rates { get; set; } = new List<Rate>();
 
         //Consructor:
@@ -66,6 +67,7 @@ namespace Main
             ImageSource BookImgSource = new BitmapImage(uri);
             this.CoverSource = BookImgSource;
             this.costWithDiscount = CostWithDiscount();
+            this.PDFURL = PDFURL;
             AllBooks.Add(this);
         }
 

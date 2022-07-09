@@ -14,7 +14,9 @@ namespace Main
 {
     class Database
     {
-        //remain : 1-BookRates.
+
+
+       
         static public void LoadAll()
         {
             LoadAllBooks();
@@ -23,10 +25,11 @@ namespace Main
         }
 
 
-        public static void LoadAllBooks()
+        static void LoadAllBooks()
         {
-            List<Book> books = new List<Book>();
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\db.mdf;Integrated Security=True;Connect Timeout=30");
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + $"{projectDirectory}\\Database\\db.mdf" + @";Integrated Security=True;Connect Timeout=30");
             conn.Open();
             string command = "SELECT * FROM Books";
             SqlDataAdapter adapter = new SqlDataAdapter(command, conn);
@@ -54,8 +57,10 @@ namespace Main
 
         static public void LoadAllManagers()
         {
-            
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\db.mdf;Integrated Security=True;Connect Timeout=30");
+
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + $"{projectDirectory}\\Database\\db.mdf" + @";Integrated Security=True;Connect Timeout=30");
             conn.Open();
             string command = "SELECT * FROM Managers";
             SqlDataAdapter adapter = new SqlDataAdapter(command, conn);
@@ -74,7 +79,7 @@ namespace Main
 
 
 
-        public static void LoadAllUsers()
+        static void LoadAllUsers()
         {
 
             string workingDirectory = Environment.CurrentDirectory;
@@ -194,7 +199,7 @@ namespace Main
                 }
 
             }
-            //select from UsersVIP Rates
+            //select from Rates Table
             {
                 string command = "SELECT * FROM Rates";
                 var adapter = new SqlDataAdapter(command, conn);
@@ -225,7 +230,176 @@ namespace Main
 
 
 
+        public static void SaveAll()
+        {
+            SaveAllUsers();
+            SaveVIP();
+            SaveBooks();
+            SaveManagers();
+        }
 
+
+        static void SaveAllUsers()
+        {
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + $"{projectDirectory}\\Database\\db.mdf" + @";Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
+            conn.Open();
+            {
+                string command1 = "DELETE FROM Users";
+                SqlCommand comm = new SqlCommand(command1, conn);
+                comm.BeginExecuteNonQuery();
+                foreach (var user in NormalUser.AllUsers)
+                {
+                    string command2 = $"INSERT INTO Users VALUES({user.Id},'{user.FirstName}','{user.LastName}','{user.Email}','{user.PhoneNumber}','{user.Password}',{user.WalletMoney})";
+                    SqlCommand comm2 = new SqlCommand(command2, conn);
+                    comm2.BeginExecuteNonQuery();
+                }
+            }
+            //Save Bought Books:
+            {
+                string command1 = "DELETE FROM UsersBoughtBooks";
+                SqlCommand comm = new SqlCommand(command1, conn);
+                comm.BeginExecuteNonQuery();
+                foreach (var user in NormalUser.AllUsers)
+                {
+                    foreach (var book in user.BoughtBooks)
+                    {
+                        string command2 = $"INSERT INTO UsersBoughtBooks VALUES({book.id},{user.Id})";
+                        SqlCommand comm2 = new SqlCommand(command2, conn);
+                        comm2.BeginExecuteNonQuery();
+                    }
+                }
+            }
+            //Save Cart Books:
+            {
+                string command1 = "DELETE FROM UsersCartBooks";
+                SqlCommand comm = new SqlCommand(command1, conn);
+                comm.BeginExecuteNonQuery();
+                foreach (var user in NormalUser.AllUsers)
+                {
+                    foreach (var book in user.cart.CartBooks)
+                    {
+                        string command2 = $"INSERT INTO UsersCartBooks VALUES({book.id},{user.Id})";
+                        SqlCommand comm2 = new SqlCommand(command2, conn);
+                        comm2.BeginExecuteNonQuery();
+                    }
+                }
+            }
+            //Save UsersMarked Books:
+            {
+                string command1 = "DELETE FROM UsersMarkedBooks";
+                SqlCommand comm = new SqlCommand(command1, conn);
+                comm.BeginExecuteNonQuery();
+                foreach (var user in NormalUser.AllUsers)
+                {
+                    foreach (var book in user.MarkedBooks)
+                    {
+                        string command2 = $"INSERT INTO UsersMarkedBooks VALUES({book.id},{user.Id})";
+                        SqlCommand comm2 = new SqlCommand(command2, conn);
+                        comm2.BeginExecuteNonQuery();
+
+                    }
+                }
+            }
+
+
+        }
+
+
+        static void SaveVIP()
+        {
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + $"{projectDirectory}\\Database\\db.mdf" + @";Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
+            conn.Open();
+            {
+                string command1 = "DELETE FROM VIPStatics";
+                SqlCommand comm = new SqlCommand(command1, conn);
+                comm.BeginExecuteNonQuery();
+                string command2 = $"INSERT INTO VIPStatics VALUES({VIP.VIPCost},{VIP.VIPDuration})";
+                SqlCommand comm2 = new SqlCommand(command2, conn);
+                comm2.BeginExecuteNonQuery();
+            }
+
+            {
+                string command1 = "DELETE FROM UsersVIP";
+                SqlCommand comm = new SqlCommand(command1, conn);
+                comm.BeginExecuteNonQuery();
+                foreach (var user in NormalUser.AllUsers)
+                {
+                    if(user.VIPSubscription!=null)
+                    {
+                        string command2 = $"INSERT INTO UsersVIP VALUES({user.Id},'{user.VIPSubscription.VIPStartingTime.ToString()}','{user.VIPSubscription.VIPEndingTime.ToString()}')";
+                        SqlCommand comm2 = new SqlCommand(command2, conn);
+                        comm2.BeginExecuteNonQuery();
+                    }
+                    
+                }
+            }
+        }
+
+
+
+        static void SaveBooks()
+        {
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + $"{projectDirectory}\\Database\\db.mdf" + @";Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
+            conn.Open();
+            {
+                string command1 = "DELETE FROM Books";
+                SqlCommand comm = new SqlCommand(command1, conn);
+                comm.BeginExecuteNonQuery();
+                foreach (var book in Book.AllBooks)
+                {
+                    string command2 = $"INSERT INTO Books VALUES" +
+                                      $"({book.id},'{book.Name}'," +
+                                      $"'{book.AuthorName}' ,{book.NumberOfPages}," +
+                                      $"'{book.Description}',{book.Cost}," +
+                                      $" {book.DiscountPercentage},{book.NumberOfSells}," +
+                                      $"'{book.VIPImageSource}','{book.PDFURL}')";
+                    SqlCommand comm2 = new SqlCommand(command2, conn);
+                    comm2.BeginExecuteNonQuery();
+                }
+            }
+            //Book Rates
+            {
+                string command1 = "DELETE FROM Rates";
+                SqlCommand comm = new SqlCommand(command1, conn);
+                comm.BeginExecuteNonQuery();
+                foreach (var book in Book.AllBooks)
+                {
+                    foreach (var rate in book.Rates)
+                    {
+                        string command2 = $"INSERT INTO Rates VALUES" +
+                              $"({book.id},{rate.user.Id},{rate.Amount})";
+
+                        SqlCommand comm2 = new SqlCommand(command2, conn);
+                        comm2.BeginExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+
+        static void SaveManagers()
+        {
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + $"{projectDirectory}\\Database\\db.mdf" + @";Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
+            conn.Open();
+            string command1 = "DELETE FROM Managers";
+            SqlCommand comm = new SqlCommand(command1, conn);
+            foreach (var manager in Manager.AllManagers)
+            {
+                string command2 = $"INSERT INTO Managers VALUES" +
+                              $"({manager.Email},{manager.Password})";
+
+                SqlCommand comm2 = new SqlCommand(command2, conn);
+                comm2.BeginExecuteNonQuery();
+            }
+        }
 
     }
 }
