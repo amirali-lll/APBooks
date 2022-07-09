@@ -56,7 +56,7 @@ namespace Main
                         BackWindow.BooksNumBox.Text = CurrentUser.cart.CartBooks.Count() + "";
                         Close();
                     }
-                    else if(Request == PayRequest.Cart)
+                    else if(Request == PayRequest.Wallet)
                     {
                         CurrentUser.WalletMoney = CurrentUser.WalletMoney + Convert.ToInt32(ToBePaidPriceBox.Text);
                         MessageBox.Show("Wallet charged successfully!");
