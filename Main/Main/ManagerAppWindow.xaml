@@ -1,0 +1,77 @@
+﻿<Window x:Class="Main.ManagerAppWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Main"
+        mc:Ignorable="d"
+        Title="ManagerAppWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <TabControl x:Name="MenuTab" Height="742" VerticalAlignment="Top" Margin="0,-83,0,0">
+            <TabItem Name="AddBooksTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/addbooks_7cih.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="EditBooksTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/editbooks_lwje.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="AllBooksTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/allbooks_psv3.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="UsersInfoTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/usersinfo_ftmh.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="SetDiscountTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/setdiscount_h8aq.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="SetVIPDurationTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/setvipduration_rjz2.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="StoreCashier" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="https://s6.uupload.ir/files/storecashier_3wsm.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Button Margin="0,80,0,0" Name="AddBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="AddBooksButton_Click"/>
+        <Button Margin="0,132,0,0" Name="EditBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="EditBooksButton_Click"/>
+        <Button Margin="0,183,0,0" Name="AllBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="AllBooksButton_Click"/>
+        <Button Margin="0,235,0,0" Name="UsersInfo" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="UsersInfo_Click"/>
+        <Button Margin="0,286,0,0" Name="SetDiscountButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="SetDiscount_Click"/>
+        <Button Margin="0,340,0,0" Name="SetVIPDurationButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="SetVIPDuration_Click"/>
+        <Button Margin="0,391,0,0" Name="StoreCashierButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="StoreCashier_Click"/>
+        <Button Margin="0,443,0,0" Name="LogOutButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="LogOutButton_Click"/>
+    </Grid>
+</Window>

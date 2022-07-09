@@ -58,6 +58,9 @@
     <Compile Include="BookInfoWindow.xaml.cs">
       <DependentUpon>BookInfoWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerAppWindow.xaml.cs">
+      <DependentUpon>ManagerAppWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rate.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="NormalUserAppWindow.xaml.cs">
@@ -73,6 +76,10 @@
     </Compile>
     <Compile Include="VIP.cs" />
     <Page Include="BookInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerAppWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -15,6 +15,7 @@ namespace Main
         }
 
 
+
         public DateTime VIPStartingTime { get; set; }
         public DateTime VIPEndingTime { get; set; }
         public static int VIPDuration { get; set; } = 20;

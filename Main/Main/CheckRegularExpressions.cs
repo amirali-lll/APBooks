@@ -12,12 +12,9 @@ namespace Main
     {
         public static bool CheckEmailCorrection(string Email)
         {
-            if (!NormalUser.AllEmails.Contains(Email))
+            if (Regex.IsMatch(Email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,})+)$"))
             {
-                if (Regex.IsMatch(Email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,})+)$"))
-                {
-                    return true;
-                }
+               return true;
             }
             return false;
         }

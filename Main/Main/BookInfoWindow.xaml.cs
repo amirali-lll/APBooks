@@ -71,7 +71,7 @@ namespace Main
 
         private void RedButton_Click(object sender, RoutedEventArgs e)
         {
-            if (CurrentUser.BoughtBooks.Contains(CurrentBook))
+            if (CurrentUser.BoughtBooks.Contains(CurrentBook) || (CurrentUser.VIPSubscription != null && CurrentBook.IsVIP))
             {
                 
             }
