@@ -12,13 +12,13 @@ namespace Main
     public class Book
     {
         //Properties:
-        public int id { get; set; } 
-        public string Name { get; set; } 
-        public string AuthorName { get; set; } 
-        public int NumberOfPages { get; set; } 
-        public string Description { get; set; } 
-        public double Cost { get; set; } 
-        public int DiscountPercentage { get; set; } 
+        public int id { get; set; }
+        public string Name { get; set; }
+        public string AuthorName { get; set; }
+        public int NumberOfPages { get; set; }
+        public string Description { get; set; }
+        public double Cost { get; set; }
+        public int DiscountPercentage { get; set; }
         public string DiscountPercentageText { get; set; } //not in db
         public int NumberOfSells { get; set; } = 0; //not in db
         public ImageSource CoverSource { get; set; } //db as string
@@ -38,7 +38,7 @@ namespace Main
             this.Cost = Cost;
             this.DiscountPercentage = DiscountPercentage;
             this.Description = Description;
-            Uri uri = new Uri(CoverSource, UriKind.Absolute);
+            Uri uri = new Uri(Database.Covers[Book.AllBooks.Count], UriKind.Absolute);
             ImageSource BookImgSource = new BitmapImage(uri);
             this.CoverSource = BookImgSource;
             this.costWithDiscount = CostWithDiscount();
@@ -65,12 +65,13 @@ namespace Main
             NumberOfSells = numberOfSells;
             if (imageURL != "")
             {
-                Uri uri = new Uri(imageURL, UriKind.Absolute);
+                Uri uri = new Uri(Database.Covers[id], UriKind.Absolute);
                 ImageSource BookImgSource = new BitmapImage(uri);
                 this.CoverSource = BookImgSource;
             }
             this.costWithDiscount = CostWithDiscount();
             this.PDFURL = PDFURL;
+            DiscountPercentageText = DiscountPercentage + "%";
             AllBooks.Add(this);
         }
 

@@ -14,11 +14,25 @@ namespace Main
 {
     class Database
     {
+        //For fixing data base bug
+        public static List<string> Covers = new List<string>();
+        public static void AddCoversManually()
+        {
+            Covers.Add("https://s6.uupload.ir/files/the_alchemist_na3u.jpg");
+            Covers.Add("https://s6.uupload.ir/files/theusdays_with_morrie_390q.jpg");
+            Covers.Add("https://s6.uupload.ir/files/animal_farm_gqqa.jpg");
+            Covers.Add("https://s6.uupload.ir/files/steve_jobs_suha.jpg");
+            Covers.Add("https://s6.uupload.ir/files/narnia_6obx.jpg");
+            Covers.Add("https://s6.uupload.ir/files/extreamly_load_and_..._9fqy.jpg");
+            Covers.Add("https://s6.uupload.ir/files/shoe_dog_o58x.jpg");
+            Covers.Add("https://s6.uupload.ir/files/bill_gates_tyr2.jpg");
+            Covers.Add("https://s6.uupload.ir/files/mark_zuckerberg_icxr.jpg");
+            Covers.Add("https://s6.uupload.ir/files/warren_buffet_zed4.jpg");
+        }
 
-
-       
         static public void LoadAll()
         {
+            AddCoversManually();
             LoadAllBooks();
             LoadAllManagers();
             LoadAllUsers();
@@ -47,7 +61,7 @@ namespace Main
                 int     n_sells         = (int)     data.Rows[i][7];
                 string  imageURL        = (string)  data.Rows[i][8];
                 string  PDFURL          = (string)  data.Rows[i][9];
-                Book    book            = new Book(id, name, AuthorName, n_pages, description, cost, discount_percen, n_sells, imageURL, PDFURL);
+                Book book = new Book(id, name, AuthorName, n_pages, Convert.ToInt32(cost), discount_percen, description, imageURL, false);
             }
 
             conn.Close();
