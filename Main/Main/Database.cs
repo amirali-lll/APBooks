@@ -52,6 +52,8 @@ namespace Main
             for (int i = 0; i < data.Rows.Count; i++)
             {
                 int     id              = (int)     data.Rows[i][0];
+                if (Book.AllBooks.Select(x => x.id).Contains(id))
+                    return;
                 string  name            = (string)  data.Rows[i][1];
                 string  AuthorName      = (string)  data.Rows[i][2];
                 int     n_pages         = (int)     data.Rows[i][3];
@@ -84,7 +86,11 @@ namespace Main
             {
                 string email = (string)data.Rows[i][1];
                 string password = (string)data.Rows[i][2];
-                Manager manager = new Manager(email, password);
+                if(!Manager.AllEmails.Contains(email))
+                {
+                    Manager manager = new Manager(email, password);
+                }
+                    
                 
             }
 
@@ -112,6 +118,8 @@ namespace Main
                     string FirstName = (string)data.Rows[i][1];
                     string LastName = (string)data.Rows[i][2];
                     string Email = (string)data.Rows[i][3];
+                    if (NormalUser.AllEmails.Contains(Email))
+                        return;
                     string PhoneNumber = (string)data.Rows[i][4];
                     string password = (string)data.Rows[i][5];
                     double walletMoney = (double)data.Rows[i][6];
@@ -269,7 +277,7 @@ namespace Main
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + $"{projectDirectory}\\Database\\db.mdf" + @";Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
             conn.Open();
             {
-                string command1 = "DELETE FROM Users";
+                string command1 = "DELETE FROM Users WHERE Id>0";
                 SqlCommand comm = new SqlCommand(command1, conn);
                 comm.BeginExecuteNonQuery();
                 foreach (var user in NormalUser.AllUsers)
@@ -371,7 +379,7 @@ namespace Main
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + $"{projectDirectory}\\Database\\db.mdf" + @";Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
             conn.Open();
             {
-                string command1 = "DELETE FROM Books";
+                string command1 = "DELETE FROM Books WHERE Id >0";
                 SqlCommand comm = new SqlCommand(command1, conn);
                 comm.BeginExecuteNonQuery();
                 foreach (var book in Book.AllBooks)
@@ -414,10 +422,11 @@ namespace Main
             conn.Open();
             string command1 = "DELETE FROM Managers";
             SqlCommand comm = new SqlCommand(command1, conn);
+            comm.BeginExecuteNonQuery();
             foreach (var manager in Manager.AllManagers)
             {
-                string command2 = $"INSERT INTO Managers VALUES" +
-                              $"({manager.Email},{manager.Password})";
+                string command2 = $"INSERT INTO Managers (Email,Password) VALUES" +
+                              $"('{manager.Email}','{manager.Password}')";
 
                 SqlCommand comm2 = new SqlCommand(command2, conn);
                 comm2.BeginExecuteNonQuery();
