@@ -38,7 +38,7 @@ namespace Main
             this.Cost = Cost;
             this.DiscountPercentage = DiscountPercentage;
             this.Description = Description;
-            Uri uri = new Uri(Database.Covers[Book.AllBooks.Count], UriKind.Absolute);
+            Uri uri = new Uri(CoverSource, UriKind.Absolute);
             ImageSource BookImgSource = new BitmapImage(uri);
             this.CoverSource = BookImgSource;
             this.costWithDiscount = CostWithDiscount();

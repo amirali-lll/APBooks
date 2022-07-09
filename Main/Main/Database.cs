@@ -61,7 +61,7 @@ namespace Main
                 int     n_sells         = (int)     data.Rows[i][7];
                 string  imageURL        = (string)  data.Rows[i][8];
                 string  PDFURL          = (string)  data.Rows[i][9];
-                Book book = new Book(id, name, AuthorName, n_pages, Convert.ToInt32(cost), discount_percen, description, imageURL, false);
+                Book book = new Book(id, name, AuthorName, n_pages, Convert.ToInt32(cost), discount_percen, description, Covers[Book.AllBooks.Count], false);
             }
 
             conn.Close();

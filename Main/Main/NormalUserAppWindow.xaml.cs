@@ -324,5 +324,11 @@ namespace Main
                 this.FirstAndLastNameBox.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
             }
         }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Database.SaveAll();
+            Close();
+        }
     }
 }

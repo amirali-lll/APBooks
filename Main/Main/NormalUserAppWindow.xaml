@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Main"
         mc:Ignorable="d"
-        Title="AppMainWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="AppMainWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid x:Name="Main">
         <TabControl x:Name="MenuTab" Height="742" VerticalAlignment="Top" Margin="0,-83,0,0">
             <TabItem Name="AllBooksTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top" Visibility="Hidden">
@@ -276,8 +276,8 @@
         </TabControl>
 
         <TextBlock x:Name="CurrentUserName" Text= "" Margin="836,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="186" FontSize="15" TextAlignment="Center" Foreground="#FFCDD8E3" />
-        <TextBlock x:Name="WallatMoneyAmount" Text= "" Margin="1065,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Left" Foreground="#FFCDD8E3" />
-        <TextBlock x:Name="VIPRemainedDays" Text= "" Margin="731,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Right" Foreground="#FFCDD8E3" />
+        <TextBlock x:Name="WallatMoneyAmount" Text= "" Margin="1079,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Left" Foreground="#FFCDD8E3" />
+        <TextBlock x:Name="VIPRemainedDays" Text= "12" Margin="741,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="60" FontSize="15" TextAlignment="Right" Foreground="#FFCDD8E3" />
 
         <Button Margin="0,80,0,0" Name="AllBooksButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="AllBooksButton_Click"/>
         <Button Margin="0,127,0,0" Name="MyLibraryButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="MyLibraryButton_Click"/>
@@ -289,5 +289,8 @@
         <Button Margin="0,422,0,0" Name="ProfileButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="ProfileButton_Click"/>
         <Button Margin="0,470,0,0" Name="LogOutButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand" Click="LogOutButton_Click"/>
         <Button Margin="0,596,0,0" Name="AboutUsButton" VerticalAlignment="Top" HorizontalAlignment="Left" Height="38" Width="270" Background="Transparent" BorderBrush="Transparent" Opacity="0.2" Cursor="Hand"/>
+
+        <Image  x:Name="CloseImage" Source="https://s6.uupload.ir/files/red-close-button-transparent_a5y7.png" Height="30" Width="30" Margin="1150,0,0,630"/>
+        <Button x:Name="CloseButton" Height="30" Width="30" Margin="1150,0,0,630" Click="CloseButton_Click" Opacity="0.1" Cursor="Hand" Background="Transparent"/>
     </Grid>
 </Window>

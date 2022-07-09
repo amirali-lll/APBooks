@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Main"
         mc:Ignorable="d"
-        Title="MainWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="MainWindow" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
         <TabControl x:Name="IntroTab" Height="701" VerticalAlignment="Top" Margin="0,-42,0,0">
             <TabItem Name="UserOrManagerTab" Height="40" Width="200" Margin="0,-1,0,0" VerticalAlignment="Top">
@@ -152,5 +152,8 @@
                 </Grid>
             </TabItem>
         </TabControl>
+
+        <Image  x:Name="CloseImage" Source="https://s6.uupload.ir/files/red-close-button-transparent_a5y7.png" Height="30" Width="30" Margin="1150,0,0,630"/>
+        <Button x:Name="CloseButton" Height="30" Width="30" Margin="1150,0,0,630" Click="CloseButton_Click" Opacity="0.1" Cursor="Hand" Background="Transparent"/>
     </Grid>
 </Window>
